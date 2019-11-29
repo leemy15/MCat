@@ -1,0 +1,9 @@
+.list-container ul li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 1.16rem; }
+  .list-container ul li .cinema {
+    font-size: 0.18rem; }
+  .list-container ul li .position {
+    font-size: 0.16rem; }

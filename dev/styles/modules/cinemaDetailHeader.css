@@ -1,0 +1,9 @@
+#cinemaDetailHeader {
+  display: flex;
+  background-color: #E54847;
+  color: #fff; }
+  #cinemaDetailHeader .backspace1 {
+    flex: 1; }
+  #cinemaDetailHeader .detailListHeader1 {
+    flex: 11;
+    text-align: center; }

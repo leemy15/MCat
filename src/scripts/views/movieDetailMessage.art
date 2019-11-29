@@ -1,0 +1,132 @@
+{{each movieParResult}}
+<div class="movie-page-info" style="background-color: {{$value.backgroundColor}}">
+    <div class="movie-info-top">
+        <div class="movie-cover">
+            <img src="{{$value.img.replace(/w\.h/,"128.108") }}" alt="">
+        </div>
+        <div class="movie-desc">
+            <div class="movie-cn-nm">{{$value.nm}}</div>
+            <div class="movie-en-nm">{{$value.enm}}</div>
+            <div class="movie-type">
+                <span class="movie-cat">{{$value.cat}}</span>
+                <span class="imax">{{$value.version.substr(1)}}</span>
+            </div>
+            <div class="actors1">{{$value.star}}</div>
+            <div class="movie-show-time">{{$value.pubDesc}}/{{$value.episodeDur}}分钟</div>
+            <div class="btns">
+                <div class="want-to-watch">
+                    <span class="fanhui">返回</span>
+                </div>
+                <div class="watched">
+                    <span>想看</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="real-time-word-of-mouth" >
+        <div class="top">
+            <span>
+                <img src="//s0.meituan.net/bs/?f=myfe/canary:/asgard/images/movie/logo.png" alt="">
+            </span>实时口碑
+        </div>
+        <div class="middle">
+            <span class="wangtoWatch">{{$value.wish}}</span>想看
+        </div>
+        <div class="bottom">NO.2热映口碑榜</div>
+    </div>
+
+    <div class="real-time-word-of-mouth1" >
+        <div class="top">
+            <span>
+                <img src="//s0.meituan.net/bs/?f=myfe/canary:/asgard/images/movie/logo.png" alt="">实时口碑
+            </span>
+            <span>
+                <span class="wantWatch">{{$value.wish}}人想看&nbsp;&nbsp;</span>
+                <span class="wantWatch">{{$value.watched}}人看过</span>
+            </span>
+        </div>
+        <div class="middle">
+            <div class="left">
+                <span class="score">{{$value.sc}}</span>
+                <span class="people-grade">{{$value.snum}}人评</span>
+            </div>
+            <div class="right">
+                <div class="star-percent-bar">
+                    <div class="star">
+                        <img src="//s0.meituan.net/bs/?f=myfe/canary:/asgard/images/movie/star-not-graded.png" alt="">
+                        <img src="//s0.meituan.net/bs/?f=myfe/canary:/asgard/images/movie/star-not-graded.png" alt="">
+                        <img src="//s0.meituan.net/bs/?f=myfe/canary:/asgard/images/movie/star-not-graded.png" alt="">
+                        <img src="//s0.meituan.net/bs/?f=myfe/canary:/asgard/images/movie/star-not-graded.png" alt="">
+                        <img src="//s0.meituan.net/bs/?f=myfe/canary:/asgard/images/movie/star-not-graded.png" alt="">
+                    </div>
+                    <div class="bar"></div>
+                    <div class="percent">95%</div>
+                </div>
+                <div class="star-percent-bar">
+                    <div class="star">
+                        <img src="//s0.meituan.net/bs/?f=myfe/canary:/asgard/images/movie/star-not-graded.png" alt="">
+                        <img src="//s0.meituan.net/bs/?f=myfe/canary:/asgard/images/movie/star-not-graded.png" alt="">
+                        <img src="//s0.meituan.net/bs/?f=myfe/canary:/asgard/images/movie/star-not-graded.png" alt="">
+                        <img src="//s0.meituan.net/bs/?f=myfe/canary:/asgard/images/movie/star-not-graded.png" alt="">
+                    </div>
+                    <div class="bar"></div>
+                    <div class="percent">95%</div>
+                </div>
+                <div class="star-percent-bar">
+                    <div class="star">
+                        <img src="//s0.meituan.net/bs/?f=myfe/canary:/asgard/images/movie/star-not-graded.png" alt="">
+                        <img src="//s0.meituan.net/bs/?f=myfe/canary:/asgard/images/movie/star-not-graded.png" alt="">
+                        <img src="//s0.meituan.net/bs/?f=myfe/canary:/asgard/images/movie/star-not-graded.png" alt="">
+                    </div>
+                    <div class="bar"></div>
+                    <div class="percent">95%</div>
+                </div>
+                <div class="star-percent-bar">
+                    <div class="star">
+                        <img src="//s0.meituan.net/bs/?f=myfe/canary:/asgard/images/movie/star-not-graded.png" alt="">
+                        <img src="//s0.meituan.net/bs/?f=myfe/canary:/asgard/images/movie/star-not-graded.png" alt="">
+                    </div>
+                    <div class="bar"></div>
+                    <div class="percent">95%</div>
+                </div>
+                <div class="star-percent-bar">
+                    <div class="star">
+                        <img src="//s0.meituan.net/bs/?f=myfe/canary:/asgard/images/movie/star-not-graded.png" alt="">
+                    </div>
+                    <div class="bar"></div>
+                    <div class="percent">95%</div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom">NO.2热映口碑榜</div>
+    </div>
+
+    <div class="brief-introduction">
+        <div class="title">
+            <span class="intro">简介</span>
+            <span class="shrink show">收起</span>
+            <span class="unfold">展开</span>
+        </div>
+        <div class="content">{{$value.dra}}</div>
+    </div>
+    <div class="videos-photos">
+        <div class="title">
+            <span>视频剧照</span>
+            <span class="allImg">全部剧照></span>
+        </div>
+        <div class="swiper">
+            <div class="swiper-container2">
+                <div class="swiper-wrapper">
+                    {{each movieParResult.detailMovie.photos}}
+                    <div class="swiper-slide">
+                        <img src="{{$value.replace(/w\.h/,"140.193") }}" alt="">
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{{/each}}

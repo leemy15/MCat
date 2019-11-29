@@ -1,0 +1,12 @@
+<div class="index-container">
+  <header></header>
+  <main>
+  </main>
+  <footer>
+    <ul>
+      <li data-to="movieList" class="active"><span class="yo-ico footerIconfont">&#xe873;</span><span class="footerFont">热映</span></li>
+      <li data-to="cinemaList"><span class="yo-ico footerIconfont">&#xe603;</span><span class="footerFont">影院</span></li>
+      <li data-to="profile"><span class="yo-ico footerIconfont">&#xe87d;</span><span class="footerFont">我的</span></li>
+    </ul>
+  </footer>
+</div>

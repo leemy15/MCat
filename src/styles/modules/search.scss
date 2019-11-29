@@ -1,0 +1,113 @@
+.cinema-search {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: .07rem .15rem;
+    background: #fff;
+    color: #000;
+
+    .cinema-search-control {
+        background: #f5f5f5;
+        width: 3rem;
+        height: 0.32rem;
+        line-height: .32rem;
+        border-radius: 5px;
+
+        input {
+            width: 2.4rem;
+            height: 100%;
+            border: 0;
+            background: transparent;
+            font-size: 13px;
+            font-weight: 550;
+        }
+
+        .icon-search {
+            font-size: 16px;
+        }
+    }
+
+    .quxiao-search {
+        width: 0.45rem;
+        height: 0.32rem;
+        line-height: .32rem;
+        margin-left: .15rem;
+        font-size: .15rem;
+        line-height: .32rem;
+        color: #1394f3;
+        font-weight: 600;
+    }
+}
+
+.cinemaSerachMod {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    overflow: scroll;
+    .searchResult{
+        width: 100%;
+        // height: 100%;
+        background: #fff;
+        padding: 0 0 0 .15rem;
+        .C-list{
+            display: flex;
+            flex-direction: row;
+            width: 3.6rem;
+            height: 1.1rem;
+            padding: .15rem .15rem .15rem 0;
+            @include border(0 0 1px 0, #999);
+            .info{
+                width: 2.8rem;
+                .name-one{
+                    padding-bottom: .06rem;
+                    height: 0.25rem;
+                    width: 3.3rem;
+                    @include ellipsis(null ,1);
+
+                    .name{
+                        font-size: .16rem;
+                        font-weight: 600;
+
+                    }
+                    .sell-Price{
+                        margin-left: 0.1rem;
+                        font-size: .11rem;
+                        color: #999999;
+                        .price{
+                            font-size: .17rem;
+                            color: #ef4238;
+                        }
+                    }
+                }
+                .address-one{
+                    height: 0.19rem;
+                    font-size: .13rem;
+                    color: #333;
+                    font-weight: 520;
+                    margin-top: .1rem;
+                    @include ellipsis(null ,1);
+
+                }
+                .fear-tags{
+                    padding-top: .07rem;
+                    height: 0.21rem;
+                    span{
+                        @include border(1px , #589daf);
+                        padding: 0.03rem .03rem;
+                        // line-height: .15rem;
+                        font-size: .1rem;
+                    }
+                }
+            }
+            .distance{
+                display: flex;
+                text-align: center;
+                align-items: center;
+                font-weight: 600;
+                color: #333;
+
+                // justify-content: center;
+            }
+        }   
+    }
+}

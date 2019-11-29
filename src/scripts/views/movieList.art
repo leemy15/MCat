@@ -1,0 +1,19 @@
+{{each list}}
+<li class="recceivedPsli" data-id="{{$value.id}}" data-to="movieDeatil">
+    <div class="receivedLeft">
+        <div class="pic">
+            <img src="{{$value.img.replace(/w\.h/,"128.108") }}" alt="">
+        </div>
+        <div class="receivedRight">
+            <div class="show-name"><div class="movieName">{{$value.nm}}</div><span class="nd">{{$value.version.replace(/ imax/,"").replace(/v/,"")}}</span><span class="isMax">{{$value.version.replace(/v\dd/,"")}}</span></div>
+            <div class="brief"><span style="display:{{ $value.showst==3? 'inline' : 'none' }}">熊猫电影评分</span><span style="display:{{ $value.showst==4? 'inline' : 'none'}}">暂无评分</span><span style="display:{{ $value.showst==3? 'inline' : 'none'}}" class="pnumber">{{$value.sc}}</span></div>
+            <div class="brief">         主演：{{$value.star}}       </div>
+            <div class="brief">        {{$value.showInfo}}        </div>
+        </div>
+   </div>
+  <div class="buyPrice">
+       <div style="display:{{ $value.showst==3? 'block' : 'none' }}" class="buy">购票</div>
+       <div style="display:{{ $value.showst==4? 'block' : 'none' }}" class="ding">预定</div>
+  </div>
+</li>
+{{/each}}

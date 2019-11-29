@@ -1,0 +1,23 @@
+#root {
+  height: 100%;
+}
+html{
+  @media screen and (max-height: 1000px){
+    font-size: 28.7vw;
+  }
+  @media screen and (min-height: 1000px){
+    font-size: 21.7vw;
+  }
+  height: 100%;
+  overflow: hidden;
+}
+body{
+  height:100%;
+  overflow:auto;
+}
+
+@font-face {
+  font-family: 'yofont';
+  src: url('/assets/icons/iconfont.woff') format('woff'),
+       url('/assets/icons/iconfont.ttf') format('truetype');
+}

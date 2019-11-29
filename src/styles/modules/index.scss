@@ -1,0 +1,52 @@
+.index-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  header {
+    height: .41rem;
+    background: #fff;
+    font-size: .18rem;
+    text-align: center;
+    line-height: .41rem;
+    color: #000;
+  }
+
+  main {
+    flex: 1;
+    overflow-y: scroll;
+    overflow-x:hidden;
+    background-color: #fff;
+  }
+
+  footer {
+    height: .49rem;
+    ul {
+      height: 100%;
+      display: flex;
+      li {
+        flex: 1;
+        background: #f6f6f6;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: #c2cfcc;
+        .footerIconfont{
+          font-size: .25rem;
+          height: .25rem;
+          line-height: .25rem;
+        }
+        .footerFont{
+          font-size: .14rem;
+          height: .14rem;
+          line-height: .14rem;
+        }
+        &.active {
+          background: #e7f3f0;
+          color: #FD6276;
+        }
+      }
+    }
+  }
+}

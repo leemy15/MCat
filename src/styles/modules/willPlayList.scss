@@ -1,0 +1,114 @@
+.live{
+    padding: 0px 15px;
+    .liveTitle{
+        margin: 0;
+        font-size: 14px;
+        color: #333;
+        text-align: left;
+        padding: 15px 0px;
+    }
+    .axa{
+        width: 100%;
+          .aja{
+              
+              .qiuqiu{
+                  display: flex;
+                  width: 40%;
+                  flex-direction: column;
+              img{
+                  display: block;
+                  width: .85rem;
+                  height: 1.15rem;
+              }
+              .willPlayname{
+                @include ellipsis(null,1);
+                margin-top:3px;
+                width:100%;
+                margin: 0;
+                font-size: 13px;
+                color: #222;
+                margin-bottom: 3px;
+              }
+              .willPlaytime{
+                margin: 0;
+                font-size: 12px;
+                color: #999;
+              }
+            }
+          }
+        }
+
+        .willPlay{
+            .willPlayList{
+                display: flex;
+                align-items: center;
+                padding: 10px 0px;
+                .willPlayListLeft{
+                    img{
+                        display: block;
+                        width: .64rem;
+                        height: .9rem;
+                    }
+                }
+                .willPlayListCenter{
+                    flex: 1;
+                    margin-left:10px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    .willPlayName{
+                        font-size: 17px;
+                        color: #333;
+                        font-weight: 700;
+                        padding-right: 5px;
+                        flex-shrink: 1; 
+                    }
+                    .willPlayWatch{
+                        font-size: 13px;
+                        margin-left: -2px;
+                        display: inline-block;
+                        color: #666;
+                        .willPlayNumber{
+                            color: #faaf00 !important;
+                            font-size: 15px;
+                            font-weight: 600;
+                        }
+                    }
+                    .willPlayStart{
+                        font-size: 13px;
+                        color: #666;
+                    }
+                    .playTime{
+                        font-size: 13px;
+                        color: #666;
+                    }
+                    }
+                    .willPlayListRight{
+                            display: flex;
+
+                        .willPlayButton{
+                            background-color: #3c9fe6;
+                            padding: 3px;
+                            width: 47px;
+                            height: 27px;
+                            text-align: center;
+                            color: #fff;
+                            border-radius: 4px;
+                            font-size: 12px;
+                            cursor: pointer;
+                        }
+                         .willPlayButton1{
+                            background-color: #faaf00;
+                            padding: 3px;
+                            width: 47px;
+                            height: 27px;
+                            text-align: center;
+                            color: #fff;
+                            border-radius: 4px;
+                            font-size: 12px;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }

@@ -1,0 +1,29 @@
+<div class="mine-title">
+    <div class="headPortrait"></div>
+</div>
+<ul class="mine-list">
+    <li class="ticketCoupon">
+        <div class="ticket">
+            <span class=" yo-ico dianying">&#xe60e;</span>
+            <span class="ticket-icon">电影票</span>
+        </div>
+        <div class="coupon">
+            <span class=" yo-ico quan" style="font-size: 30px;">&#xe878;</span>
+            <span class="ticket-icon">优惠券</span>
+
+        </div>
+    </li>
+    <li class="tppCard">
+        <div class="listCard">
+            <span>淘票票乐影卡</span>
+            <span class="icon-arrow yo-ico">&#xe63a;</span>
+        </div>
+    </li>
+    <li class="tppHelp">
+        <div class="listCard">
+            <span class="help">帮助与反馈</span>
+            <span class="consult">咨询票小蜜</span>
+            <span class="icon yo-ico">&#xe789;</span>
+        </div>
+    </li>
+</ul>

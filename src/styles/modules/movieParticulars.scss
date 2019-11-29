@@ -1,0 +1,360 @@
+.movie-page-info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: .21rem .16rem;
+    color: #fff;
+
+    .movie-info-top {
+        // background: chocolate;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 1.38rem;
+
+        .movie-cover {
+            // flex: 1;
+            width: 1rem;
+            height: 1.38rem;
+
+            img {
+                width: 1rem;
+                height: 1.38rem;
+            }
+        }
+
+        .movie-desc {
+            height: 100%;
+            margin-left: .10rem;
+
+            .movie-cn-nm {
+                font-size: .20rem;
+                color: #fff;
+                font-weight: 700;
+                @include ellipsis(null, 1);
+
+            }
+
+            .movie-en-nm {
+                font-size: .12rem;
+                opacity: 0.6;
+                @include ellipsis(null, 1);
+
+            }
+
+            .movie-type {
+                font-size: .12rem;
+                opacity: 0.6;
+                @include ellipsis(null, 1);
+
+                .imax {
+                    background: #999;
+                    opacity: .6;
+                }
+            }
+
+            .actors1 {
+                font-size: .12rem;
+                opacity: 0.6;
+                @include ellipsis(null, 1);
+
+            }
+
+            .movie-show-time {
+                font-size: .12rem;
+                opacity: 0.6;
+                @include ellipsis(null, 1);
+
+            }
+
+            .btns {
+                display: flex;
+                flex-direction: row;
+
+                div {
+                    width: 1.1rem;
+                    height: 0.3rem;
+                    border-radius: .08rem;
+                    font-size: .14rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: #fff;
+                    background: hsla(0, 0%, 100%, .35);
+                    box-shadow: 0 0.02rem 0.08rem 0 rgba(0, 0, 0, .1);
+                }
+
+                .want-to-watch {
+                    margin-right: .05rem;
+                }
+            }
+        }
+    }
+
+    .real-time-word-of-mouth {
+        // background: coral;
+        width: 100%;
+        height: 1.455rem;
+        margin-top: .15rem;
+        padding: .1rem .12rem;
+        border-radius: .1rem;
+        background-color: rgba(0, 0, 0, .2);
+        box-shadow: 0 0 0.06rem 0 hsla(0, 0%, 100%, .03);
+
+
+        .top {
+            width: 100%;
+            height: 0.17rem;
+            font-size: .12rem;
+            color: #fff;
+            vertical-align: top;
+
+            img {
+                width: 0.14rem;
+                height: 0.14rem;
+                vertical-align: top;
+            }
+        }
+
+        .middle {
+            width: 100%;
+            height: .8rem;
+            font-size: .44rem;
+            // @include border(0 0 1px 0, #999);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: .26rem;
+            color: #fff;
+
+            .wangtoWatch {
+                color: #ffbb29;
+            }
+
+        }
+
+        .bottom {
+            width: 100%;
+            height: 0.28rem;
+            padding-top: 0.1rem;
+            font-size: .12rem;
+            color: #fff;
+        }
+    }
+    .real-time-word-of-mouth1 {
+        // background: coral;
+        width: 100%;
+        height: 1.75rem;
+        margin-top: .15rem;
+        padding: .1rem .12rem;
+        border-radius: .1rem;
+        background-color: rgba(0, 0, 0, .2);
+        box-shadow: 0 0 0.06rem 0 hsla(0, 0%, 100%, .03);
+
+
+        .top {
+            width: 100%;
+            height: 0.17rem;
+            font-size: .12rem;
+            color: #fff;
+            vertical-align: top;
+            display: flex;
+            justify-content: space-between;
+
+            img {
+                width: 0.14rem;
+                height: 0.14rem;
+                vertical-align: top;
+                margin-right: .05rem;
+            }
+            .wantWatch{
+                opacity: .6;
+            }
+        }
+
+        .middle {
+            width: 100%;
+            height: 1.12rem;
+            font-size: .44rem;
+            // @include border(0 0 1px 0, #999);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: .26rem;
+            color: #fff;
+
+            .left {
+                color: #ffbb29;
+                display: flex;
+                flex-direction: column;
+                .people-grade{
+                    font-size: .12rem;
+                    opacity: .6;
+                    color: #fff;
+                }
+                .score{
+                    font-size: .34rem;
+                    text-align: center;
+                }
+            }
+            .right{
+                margin-left: .4rem;
+
+                width: 1.75rem;
+                height: 0.72rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding-top: .05rem;
+                .star-percent-bar{
+                    width: 1.73rem;
+                    height: 0.15rem;
+                    display: flex;
+                    flex-direction: row;
+                    // justify-content: center;
+                    // align-self:center;
+
+
+                    // align-items: baseline;
+                    img{
+                        width: 0.05rem;
+                        height: 0.05rem;
+                        margin-right: .01rem;
+
+                    }
+                    .star{
+                        width: 0.30rem;
+                        height: 100%;
+                        display: flex;
+                        justify-content: flex-end;
+                        margin-right: .05rem;
+                        vertical-align: middle;
+                    }
+                    .bar{
+                        width: 0.9rem;
+                        height: 0.05rem;
+                        background-color: hsla(0,0%,100%,.05);
+                        vertical-align:middle;
+
+                    }
+                    .percent{
+                        font-size: .08rem;
+                        opacity: .6;
+                        line-height: .1rem;
+                        margin-left: .05rem;
+                        vertical-align: middle;
+
+                    }
+                }
+            }
+
+        }
+
+        .bottom {
+            width: 100%;
+            height: 0.28rem;
+            padding-top: 0.1rem;
+            font-size: .12rem;
+            color: #fff;
+        }
+    }
+
+    .movie-watching-tips {
+        width: 100%;
+        height: 0.51rem;
+        padding: .1rem 0;
+
+        .tip {
+            padding: .05rem 0;
+        }
+    }
+
+    .brief-introduction {
+        padding: .16rem 0 0;
+
+        .title {
+
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .shrink ,.unfold{
+            font-size: .12rem;
+            opacity: 0.6;
+            display: none;
+        }
+        .show{
+            display: inline-block;
+        }
+
+        // .intro{
+
+        // }
+        .content {
+            width: 100%;
+            margin: .07rem 0;
+            overflow: hidden;
+        }
+    }
+
+    .actors {
+        margin: .18rem 0 .15rem;
+    }
+
+    .videos-photos {
+        width: 100%;
+        height: 1.3rem;
+        margin-top: .18rem;
+
+        .title {
+            display: flex;
+            justify-content: space-between;
+
+            .allImg {
+                font-size: .12rem;
+                opacity: 0.6;
+
+            }
+        }
+
+        .swiper {
+
+            margin-top: .05rem;
+            width: 100%;
+
+            .swiper-container2 {
+                width: 100%;
+                height: 100%;
+            }
+
+            .swiper-slide {
+                text-align: center;
+                font-size: 14px;
+                /* background: #fff; */
+                width: 140px !important;
+                height: 93px;
+                img{
+                    width: 140px !important;
+                    height: 93px;
+    
+                }
+                // background: #fff;
+
+                /* Center slide text vertically */
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: -webkit-flex;
+                display: flex;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                -webkit-justify-content: center;
+                justify-content: center;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                -webkit-align-items: center;
+                align-items: center;
+            }
+
+        }
+    }
+}

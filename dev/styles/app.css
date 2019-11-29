@@ -1,0 +1,2759 @@
+@charset "UTF-8";
+/**
+ * Yo框架全局base定义
+ * 本文件与variables不同地方在于，这里所定义的map可以使用在variables和任何地方
+ * lib中map使用“_”开头，本文件中不使用"_"
+ * base ⇌ extra
+ */
+/**
+ * Yo框架全局base定义
+ * 本文件与variables不同地方在于，这里所定义的map可以使用在variables和任何地方
+ * 本文件中map使用"_"开头，extra中不使用"_"
+ * base ⇌ extra
+ */
+/**
+ * 合并base和extra中的同类base map
+ * 用以解决业务方升级Yo时需比base和extra的一致性
+ * 当extra为空时，base map将以base文件里的定义作为默认值
+ * 当extra不为空时，base map使用extra文件里的定义
+ */
+/**
+ * Yo框架全局Variables
+ * Yo基础变量map，如果不想定义某属性，将其value设置为null；
+ * Yo仅使用2种长度单位：px用于边框，rem用于除边框之外的所有地方
+ * variables中map使用“_”开头，本文件中不使用"_"
+ * variables ⇌ config
+ */
+/**
+ * Yo框架全局Variables
+ * Yo基础变量map，如果不想定义某属性，将其value设置为null
+ * Yo仅使用2种长度单位：px用于边框，rem用于除边框之外的所有地方
+ * 本文件中map使用"_"开头，config中不使用"_"
+ * variables ⇌ config
+ */
+/**
+ * 合并variables和config中的同类map
+ * 用以解决业务方升级Yo时需比config和variables的一致性
+ * 当config为空时，使用variables中的map作为默认值
+ * 当config不为空时，使用config中的定义
+ */
+/**
+ * Yo框架自定义全局函数
+ * 扩充Sass默认函数库，用以增强语法
+ */
+/**
+ * @module List扩展函数
+ * @description 返回SassList中的第一项
+ * @function first
+ * @version 2.1.0
+ * @param {String} $list 指定一个Sass List <2.1.0>
+ */
+/**
+ * @module List扩展函数
+ * @description 返回SassList中的最后一项
+ * @function last
+ * @version 2.1.0
+ * @param {String} $list 指定一个Sass List <2.1.0>
+ */
+/**
+ * @module List扩展函数
+ * @description 返回SassList中的倒数第几项
+ * @function nth-last
+ * @version 2.1.0
+ * @param {String} $list 指定一个Sass List <2.1.0>
+ * @param {Integer} $index 指定需要返回的值在list中的倒数位置 <2.1.0>
+ */
+/**
+ * @module List扩展函数
+ * @description 移除SassList中的某个项目并返回新的List
+ * @function remove
+ * @version 2.1.0
+ * @param {String} $list 指定一个Sass List <2.1.0>
+ * @param {String} $value 指定需要被删除的值 <2.1.0>
+ */
+/**
+ * @module List扩展函数
+ * @description 截取SassList中的某个部分并返回新的List
+ * @function slice
+ * @version 2.1.0
+ * @param {String} $list 指定一个Sass List <2.1.0>
+ * @param {Integer} $start 指定需要截取的开始下标 <2.1.0>
+ * @param {Integer} $end 指定需要截取的结束下标（不包括end），当该值缺省时默认为末尾下标 <2.1.0>
+ */
+/**
+ * @module List扩展函数
+ * @description 从SassList中添加/删除项目，然后返回新的List。
+ * @function splice
+ * @version 2.1.0
+ * @param {String} $list 指定一个Sass List <2.1.0>
+ * @param {Integer} $index 指定需要移除的开始下标 <2.1.0>
+ * @param {Integer} $count 指定需要移除的数量，不可以为负值，0表示不移除 <2.1.0>
+ * @param {String} $values 指定需要添加的新值（可以是多个），如果该值缺省，则表示只移除不添加新值 <2.1.0>
+ */
+/**
+ * Yo框架全局基础方法
+ * 包括响应式方案，CSS3兼容性方案，厂商前缀方案，iconfont方案，flex布局等全局方法
+ */
+/**
+ * @module 常用方法
+ * @description 给需要的属性加厂家前缀
+ * @method prefix
+ * @version 1.0.0
+ * @param {String} $property 指定属性 <1.0.0>
+ * @param {String} $value 指定属性值 <1.0.0>
+ * @skip
+ */
+/**
+ * @module 常用方法
+ * @description 定义字体图标
+ * @method _iconfont
+ * @version 1.0.0
+ * @skip
+ */
+/**
+ * @module 常用方法
+ * @description 四则运算(系统要求：iOS6.0+,Android4.4+)
+ * @method calc
+ * @version 1.7.0
+ * @param {String} $property 指定需要进行计算的CSS属性 <1.7.0>
+ * @param {String} $value 与原生CSS语法一致，区别在于需要使用引号包裹表达式 <1.7.0>
+ * @example
+ * .calc {
+ *     @include calc(width, "100% - 100px");
+ * }
+ *
+ * <div class="calc">四则运算</div>
+ */
+/**
+ * @module 常用方法
+ * @description 定义响应式方案
+ * @method responsive
+ * @version 1.0.0
+ * @param {String} $media 指定媒体查询条件，取值为`config`文件map `media-types`中的值 <1.0.0>
+ */
+/**
+ * @module 常用方法
+ * @description 清除浮动方案
+ * @method clearfix
+ * @version 1.0.0
+ * @param {String} $type 指定清除浮动的方式，包括：pseudo-element | bfc，默认值：pseudo-element <1.8.5>
+ */
+/**
+ * @module 常用方法
+ * @description 清除行内级元素间间隙方案
+ * @method clearspace
+ * @version 3.0.3
+ * @param {Length} $font-size 指定子元素字号，默认值：.14rem <3.0.3>
+ * @example
+ * .demo {
+ *     @include clearspace;
+ * }
+ *
+ * <div class="demo">
+ *      <span class="item">1</span>
+ *      <span class="item">2</span>
+ *      <span class="item">3</span>
+ * </div>
+ */
+/**
+ * @module 常用方法
+ * @description 描述元素内容在横、纵方向上的对齐方式，默认为水平垂直居中对齐
+ * @method align
+ * @version 2.0.0
+ * @param {String} $flexbox 元素布局方式，可选值：flex | inline-flex，默认值：flex <2.0.0>
+ * @param {Keyword} $justify-content 元素内容的水平对齐方式，取值与`justify-content`属性一致，默认值：center <2.0.0>
+ * @param {Keyword} $align-items 元素内容的垂直对齐方式，取值与`align-items`属性一致，默认值：center <2.0.0>
+ * @example
+ * .demo {
+ *     @include align;
+ * }
+ *
+ * <div class="demo">
+ *      <img alt="未知尺寸图片居中" />
+ * </div>
+ */
+/**
+ * @module 常用方法
+ * @description 定义是否有滚动条
+ * @method overflow
+ * @version 1.0.0
+ * @param {String} $overflow 取值与最新原生语法一致，默认值：auto <1.0.0>
+ */
+/**
+ * @module 常用方法
+ * @description 生成全屏方法
+ * @method fullscreen
+ * @version 1.7.0
+ * @param {Integer} $z-index 指定层叠级别 <1.7.0>
+ * @param {Keywords} $position 指定定位方式，取除`static | relative`之外的值，默认值：absolute <1.8.5>
+ */
+/**
+ * @module 用户界面
+ * @description 定义使用何种滤镜
+ * @method filter
+ * @version 1.7.0
+ * @param {String} $filter 取值与`filter`属性一致 <1.7.0>
+ */
+/**
+ * @module 用户界面
+ * @description 定义UA默认外观
+ * @method appearance
+ * @version 1.0.0
+ * @param {String} $appearance 取值与`appearance`属性一致，默认值：none <1.0.0>
+ */
+/**
+ * @module 用户界面
+ * @description 定义如何选中内容
+ * @method user-select
+ * @version 1.0.0
+ * @param {String} $user-select 取值与`user-select`属性一致，默认值：none <1.0.0>
+ */
+/**
+ * @module 用户界面
+ * @description 定义盒模型
+ * @method box-sizing
+ * @version 1.0.0
+ * @param {String} $box-sizing 指定盒模型类型，取值与`box-sizing`属性一致，默认值：border-box <1.0.0>
+ */
+/**
+ * @module 背景与边框
+ * @description 定义渐变色值
+ * @method gradient
+ * @version 1.0.0
+ * @param {String} $type 指定渐变的4种类型：linear, repeating-linear, radial, repeating-radial <1.0.0>
+ * @param {String} $dir 指定渐变方向，可选值：[left | right] || [top | bottom] | angle <2.0.0>
+ * @param {String} $gradient 指定渐变取值，与w3c最新原生语法一致 <1.0.0>
+ */
+/**
+ * @module 背景与边框
+ * @description 定义背景图像缩放（AndroidBrowser2.3.*还需要厂商前缀）
+ * @method background-size
+ * @version 1.4.0
+ * @param {Keywords | Length} $background-size 指定背景图缩放值，取值与`background-size`属性一致 <1.4.0>
+ */
+/**
+ * @module 背景与边框
+ * @description 定义背景裁减（AndroidBrowser2.3.*还需要厂商前缀）
+ * @method background-clip
+ * @version 1.6.0
+ * @param {Keywords} $background-clip 指定背景图缩放值，取值与`background-clip`属性一致 <1.6.0>
+ */
+/**
+ * @module 背景与边框
+ * @description 定义背景显示区域（AndroidBrowser2.3.*还需要厂商前缀）
+ * @method background-origin
+ * @version 1.6.0
+ * @param {Keywords} $background-origin 指定背景图`background-position`属性计算相对的参考点，取值与`background-origin`属性一致 <1.6.0>
+ */
+/**
+ * @module 背景与边框
+ * @description 为元素添加边框（包括1px边框）
+ * @method border
+ * @version 2.0.0
+ * @param {String} $border-width 指定边框厚度（单位为px），默认值：1px，取值与`border-width`属性一致，不同方向代表边框位置 <2.0.0>
+ * @param {String} $border-color 指定边框颜色 <2.0.0>
+ * @param {String} $border-style 指定边框样式 <2.0.0>
+ * @param {String} $radius 指定边框圆角半径，默认值：null <2.0.0>
+ */
+/**
+ * @module 背景与边框
+ * @description 定义圆角，用于修复某些安卓机型上“圆角+边框+背景”，背景溢出的情况
+ * @method border-radius
+ * @version 1.6.0
+ * @param {Length} $border-radius 指定元素的圆角半径，取值与`border-radius`属性一致 <1.6.0>
+ */
+/**
+ * @module Transform
+ * @description 定义简单变换
+ * @method transform
+ * @version 1.0.0
+ * @param {String} $transform 取值范围与`transform`属性一致 <1.0.0>
+ */
+/**
+ * @module Transform
+ * @description 定义变换原点
+ * @method transform-origin
+ * @version 1.0.0
+ * @param {Length | Percentage | Keywords} $transform-origin 取值范围与`transform-origin`属性一致 <1.0.0>
+ */
+/**
+ * @module Transform
+ * @description 指定某元素的子元素是（看起来）位于三维空间内，还是在该元素所在的平面内被扁平化
+ * @method transform-style
+ * @version 2.0.0
+ * @param {String} $transform-style 取值范围与`transform-style`属性一致 <2.0.0>
+ */
+/**
+ * @module Transform
+ * @description 指定观察者与「z=0」平面的距离，使具有三维位置变换的元素产生透视效果。「z>0」的三维元素比正常大，而「z<0」时则比正常小，大小程度由该属性的值决定。
+ * @method perspective
+ * @version 2.0.0
+ * @param {none | Length} $perspective 取值范围与`perspective`属性一致 <2.0.0>
+ */
+/**
+ * @module Transform
+ * @description 指定透视点的位置
+ * @method perspective-origin
+ * @version 2.0.0
+ * @param {Length | Percentage | Keywords} $perspective-origin 取值范围与`perspective-origin`属性一致 <2.0.0>
+ */
+/**
+ * @module Transform
+ * @description 指定元素背面面向用户时是否可见
+ * @method backface-visibility
+ * @version 2.0.0
+ * @param {Keywords} $backface-visibility 取值范围与`backface-visibility`属性一致 <2.0.0>
+ */
+/**
+ * @module Animation
+ * @description 定义动画
+ * @method animation
+ * @version 1.0.0
+ * @param {String} $animation 取值与原生语法一致 <1.0.0>
+ */
+/**
+ * @module Animation
+ * @description 指定需要引用的动画名称
+ * @method animation-name
+ * @version 3.0.0
+ * @param {String} $animation-name 取值与原生语法一致 <3.0.0>
+ */
+/**
+ * @module Animation
+ * @description 指定动画运行一次所持续的时长
+ * @method animation-duration
+ * @version 3.0.0
+ * @param {String} $animation-duration 取值与原生语法一致 <3.0.0>
+ */
+/**
+ * @module Animation
+ * @description 指定动画运行方式
+ * @method animation-timing-function
+ * @version 3.0.0
+ * @param {String} $animation-timing-function 取值与原生语法一致 <3.0.0>
+ */
+/**
+ * @module Animation
+ * @description 指定动画延迟多久之后再开始
+ * @method animation-delay
+ * @version 3.0.0
+ * @param {String} $animation-delay 取值与原生语法一致 <3.0.0>
+ */
+/**
+ * @module Animation
+ * @description 指定动画循环几次
+ * @method animation-iteration-count
+ * @version 3.0.0
+ * @param {String} $animation-iteration-count 取值与原生语法一致 <3.0.0>
+ */
+/**
+ * @module Animation
+ * @description 指定动画的运动方向
+ * @method animation-direction
+ * @version 3.0.0
+ * @param {String} $animation-direction 取值与原生语法一致 <3.0.0>
+ */
+/**
+ * @module Animation
+ * @description 指定动画的运动状态
+ * @method animation-play-state
+ * @version 3.0.0
+ * @param {String} $animation-play-state 取值与原生语法一致 <3.0.0>
+ */
+/**
+ * @module Animation
+ * @description 指定动画时间之外的状态
+ * @method animation-fill-mode
+ * @version 3.0.0
+ * @param {String} $animation-fill-mode 取值与原生语法一致 <3.0.0>
+ */
+/**
+ * @module Transition
+ * @description 定义补间
+ * @method transition
+ * @version 1.0.0
+ * @param {String} $transition 取值与原生语法一致 <1.0.0>
+ */
+/**
+ * @module Flexbox
+ * @description 定义显示类型为伸缩盒
+ * @method flexbox
+ * @version 1.0.0
+ * @param {String} $flexbox 默认值：flex，可选值：flex | inline-flex <1.0.0>
+ */
+/**
+ * @module Flexbox
+ * @description 定义伸缩盒子元素如何分配空间
+ * @method flex
+ * @version 1.0.0
+ * @param {Number} $flex 取值与`flex`属性一致，默认值：1 <1.0.0>
+ * @param {String} $direction 默认值: row，可选值：row | column <1.5.0>
+ */
+/**
+ * @module Flexbox
+ * @description 定义伸缩盒子元素的排版顺序
+ * @method order
+ * @version 1.0.0
+ * @param {Integer} $order 取值与`order`属性一致，默认值：1 <1.0.0>
+ */
+/**
+ * @module Flexbox
+ * @description 定义弹性盒子元素流动方向及遇见边界时是否换行(要求系统：iOS7.0+, Android4.4+)
+ * @method flex-flow
+ * @version 2.0.0
+ * @param {String} $flex-flow 取值与`flex-flow`属性一致，默认值：row nowrap <2.0.0>
+ */
+/**
+ * @module Flexbox
+ * @description 定义伸缩盒子元素的流动方向
+ * @method flex-direction
+ * @version 1.0.0
+ * @param {String} $flex-direction 取值与`flex-direction`属性一致，默认值：row <1.0.0>
+ */
+/**
+ * @module Flexbox
+ * @description 定义弹性盒子元素溢出后排版(要求系统：iOS7.0+, Android4.4+)
+ * @method flex-wrap
+ * @version 1.0.0
+ * @param {String} $flex-wrap 取值与`flex-wrap`属性一致，默认值：nowrap <1.0.0>
+ */
+/**
+ * @module Flexbox
+ * @description 定义弹性容器主轴对齐方式(其中`space-around`值需要iOS7.0+,Android4.4+)
+ * @method justify-content
+ * @version 1.0.0
+ * @param {String} $justify-content 取值与`justify-content`属性一致，默认值：center <1.0.0>
+ */
+/**
+ * @module Flexbox
+ * @description 定义多行弹性容器侧轴对齐方式(要求系统：iOS7.0+,Android4.4+)
+ * @method align-content
+ * @version 1.8.5
+ * @param {String} $align-content 取值与`align-content`属性一致，默认值：center <1.8.5>
+ */
+/**
+ * @module Flexbox
+ * @description 定义单行弹性容器侧轴对齐方式
+ * @method align-items
+ * @version 1.0.0
+ * @param {String} $align-items 取值与`align-items`属性一致，默认值：center <1.0.0>
+ */
+/**
+ * @module Flexbox
+ * @description 定义弹性容器中子元素自身的在侧轴对齐方式(要求系统：iOS7.0+,Android4.4+)
+ * @method align-self
+ * @version 1.0.0
+ * @param {String} $align-self 取值与`align-self`属性一致，默认值：center <1.0.0>
+ */
+/**
+ * @module 形状
+ * @description 生成矩形方法
+ * @method rect
+ * @version 1.0.0
+ * @param {Length} $width 定义矩形的长度 <1.0.0>
+ * @param {Length} $height 定义矩形的高度 <1.0.0>
+ */
+/**
+ * @module 形状
+ * @description 生成正方形方法
+ * @method square
+ * @version 1.0.0
+ * @param {Length} $size 定义正方形的边长 <1.0.0>
+ */
+/**
+ * @module 形状
+ * @description 生成圆形方法
+ * @method circle
+ * @version 1.0.0
+ * @param {Length} $size 定义圆的半径长度 <1.0.0>
+ * @param {Length} $radius 定义圆的圆角半径长度 <1.0.0>
+ */
+/**
+ * @module 常用方法
+ * @description 在自适应宽度情况下，确保内容元素的宽高比固定，比如：实现随屏幕大小而变化的正方形。
+ * @method fixed-scale
+ * @version 3.0.10
+ * @param {Length} $width 默认值：100%。用以指定内容元素的初始宽度，由于尺寸需动态变化，不要使用固定单位 <3.0.10>
+ * @param {Length} $scale 默认值：1/1，即正方形。用以指定内容元素的宽度高比 <3.0.10>
+ */
+/**
+ * @module 文本
+ * @description 链接处理方法
+ * @method link
+ * @version 1.0.0
+ * @param {Color} $color 定义链接颜色 <1.0.0>
+ */
+/**
+ * @module 文本
+ * @description 文本碰到边界是否换行
+ * @method wrap
+ * @version 1.0.0
+ * @param {Boolean} $is-wrap 定义文本是否换行，默认值：true <2.0.0>
+ */
+/**
+ * @module 文本
+ * @description 单行文本溢出时显示省略号
+ * @method ellipsis
+ * @version 1.0.0
+ * @param {Length} $width 定义容器的宽度，默认值：null <2.0.0>
+ * @param {Integer} $line-clamp 定义需要显示的行数，默认值：1（即使用单行溢出的处理方案），需要注意的是本参数只支持webkit内核 <2.1.2>
+ */
+/**
+ * @module 文本
+ * @description 文字隐藏方案
+ * @method texthide
+ * @version 1.0.0
+ * @param {Length} $width 定义容器的宽度，默认值：null <2.0.0>
+ */
+/**
+ * Yo框架全局Reset
+ * Yo重置Mobile及高级浏览器上常见的差异
+ */
+*,
+::before,
+::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+
+html,
+body {
+  overflow: hidden;
+  height: 100%; }
+
+::-webkit-scrollbar {
+  display: none; }
+
+html {
+  background-color: #eee;
+  color: #212121;
+  font-size: 100px;
+  -webkit-user-select: none;
+  user-select: none; }
+
+body {
+  margin: 0;
+  font-size: 0.14em;
+  line-height: 1.5;
+  font-family: Helvetica Neue, Helvetica, STHeiTi, sans-serif; }
+
+ul,
+ol,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+figure,
+form,
+fieldset,
+legend,
+input,
+textarea,
+button,
+p,
+blockquote,
+th,
+td,
+pre,
+xmp {
+  margin: 0;
+  padding: 0; }
+
+input,
+textarea,
+button,
+select,
+pre,
+xmp,
+tt,
+code,
+kbd,
+samp {
+  line-height: inherit;
+  font-family: inherit; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+small,
+big,
+input,
+textarea,
+button,
+select {
+  font-size: inherit; }
+
+address,
+cite,
+dfn,
+em,
+i,
+optgroup,
+var {
+  font-style: normal; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+  text-align: left; }
+
+ul,
+ol,
+menu {
+  list-style: none; }
+
+fieldset,
+img {
+  border: 0;
+  vertical-align: middle; }
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block; }
+
+audio,
+canvas,
+video {
+  display: inline-block; }
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "\0020"; }
+
+textarea,
+pre,
+xmp {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch; }
+
+textarea {
+  resize: vertical; }
+
+input,
+textarea,
+button,
+select,
+summary,
+a {
+  outline: 0 none; }
+
+input,
+textarea,
+button,
+select {
+  color: inherit; }
+  input:disabled,
+  textarea:disabled,
+  button:disabled,
+  select:disabled {
+    opacity: 1; }
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  padding: 0;
+  border: 0; }
+
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="file"]::-webkit-file-upload-button,
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none; }
+
+::-webkit-details-marker {
+  display: none; }
+
+mark {
+  background-color: rgba(0, 0, 0, 0); }
+
+a,
+ins,
+s,
+u,
+del {
+  text-decoration: none; }
+
+a,
+img {
+  -webkit-touch-callout: none; }
+
+a {
+  color: #00afc7; }
+
+.g-clear::after,
+.g-mod::after {
+  display: block;
+  overflow: hidden;
+  clear: both;
+  height: 0;
+  content: "\0020"; }
+
+@font-face {
+  font-family: yofont;
+  src: url(//ss.qunarzz.com/yo/font/1.0.3/yofont.woff) format("woff"), url(//ss.qunarzz.com/yo/font/1.0.3/yofont.ttf) format("truetype"); }
+
+.yo-ico {
+  font-family: yofont !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  vertical-align: middle; }
+
+#root {
+  height: 100%; }
+
+html {
+  height: 100%;
+  overflow: hidden; }
+  @media screen and (max-height: 1000px) {
+    html {
+      font-size: 28.7vw; } }
+  @media screen and (min-height: 1000px) {
+    html {
+      font-size: 21.7vw; } }
+
+body {
+  height: 100%;
+  overflow: auto; }
+
+@font-face {
+  font-family: 'yofont';
+  src: url("/assets/icons/iconfont.woff") format("woff"), url("/assets/icons/iconfont.ttf") format("truetype"); }
+
+.index-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%; }
+  .index-container header {
+    height: .41rem;
+    background: #fff;
+    font-size: .18rem;
+    text-align: center;
+    line-height: .41rem;
+    color: #000; }
+  .index-container main {
+    flex: 1;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: #fff; }
+  .index-container footer {
+    height: .49rem; }
+    .index-container footer ul {
+      height: 100%;
+      display: flex; }
+      .index-container footer ul li {
+        flex: 1;
+        background: #f6f6f6;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: #c2cfcc; }
+        .index-container footer ul li .footerIconfont {
+          font-size: .25rem;
+          height: .25rem;
+          line-height: .25rem; }
+        .index-container footer ul li .footerFont {
+          font-size: .14rem;
+          height: .14rem;
+          line-height: .14rem; }
+        .index-container footer ul li.active {
+          background: #e7f3f0;
+          color: #FD6276; }
+
+.list-container {
+  position: relative;
+  position: relative; }
+  .list-container::after {
+    pointer-events: none;
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    content: "\0020";
+    border-color: #e8e8e8;
+    border-style: solid;
+    border-width: 1px 0 0 0;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0; }
+    @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+      .list-container::after {
+        width: 100%;
+        height: 100%; } }
+    @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+      .list-container::after {
+        width: 200%;
+        height: 200%;
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5); } }
+    @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+      .list-container::after {
+        width: 300%;
+        height: 300%;
+        -webkit-transform: scale(0.33333);
+        transform: scale(0.33333); } }
+  .list-container .cinmaUl {
+    background-color: #fff; }
+    .list-container .cinmaUl .clickList {
+      display: none;
+      position: absolute;
+      overflow: scroll;
+      background-color: #fff;
+      z-index: 99999;
+      width: 100%;
+      height: 4rem; }
+      .list-container .cinmaUl .clickList .pikeCity {
+        overflow: hidden; }
+        .list-container .cinmaUl .clickList .pikeCity .pikeCityHeaderNow {
+          color: #f03d37;
+          border-bottom: 1px solid #f03d37; }
+        .list-container .cinmaUl .clickList .pikeCity .pikeCityHeader {
+          display: flex; }
+          .list-container .cinmaUl .clickList .pikeCity .pikeCityHeader .shangqu, .list-container .cinmaUl .clickList .pikeCity .pikeCityHeader .ditie {
+            width: 50%;
+            text-align: center;
+            height: 0.44rem;
+            line-height: 0.44rem; }
+        .list-container .cinmaUl .clickList .pikeCity .pikeCityBody {
+          display: flex;
+          text-align: center; }
+          .list-container .cinmaUl .clickList .pikeCity .pikeCityBody .pikeArea {
+            flex: 2; }
+            .list-container .cinmaUl .clickList .pikeCity .pikeCityBody .pikeArea .pickAreaUl {
+              overflow-y: scroll;
+              height: 3.55rem; }
+              .list-container .cinmaUl .clickList .pikeCity .pikeCityBody .pikeArea .pickAreaUl .pickAreaLi {
+                font-size: 14px;
+                text-align: center;
+                height: 0.44rem;
+                line-height: 0.44rem;
+                color: #777; }
+              .list-container .cinmaUl .clickList .pikeCity .pikeCityBody .pikeArea .pickAreaUl .pickAreaLiNow {
+                color: #f03d37;
+                background-color: #f5f5f5; }
+          .list-container .cinmaUl .clickList .pikeCity .pikeCityBody .pickTown {
+            flex: 3;
+            background-color: #f5f5f5; }
+            .list-container .cinmaUl .clickList .pikeCity .pikeCityBody .pickTown .pickTownUl {
+              height: 3.55rem;
+              overflow-y: scroll; }
+              .list-container .cinmaUl .clickList .pikeCity .pikeCityBody .pickTown .pickTownUl .pickTownNow {
+                color: #f03d37; }
+              .list-container .cinmaUl .clickList .pikeCity .pikeCityBody .pickTown .pickTownUl .diqu {
+                display: flex; }
+                .list-container .cinmaUl .clickList .pikeCity .pikeCityBody .pickTown .pickTownUl .diqu .dui {
+                  flex: 1;
+                  text-align: right;
+                  margin-right: 10px;
+                  height: 0.3rem;
+                  line-height: 0.3rem; }
+                .list-container .cinmaUl .clickList .pikeCity .pikeCityBody .pickTown .pickTownUl .diqu .pickTownLi {
+                  flex: 3;
+                  text-align: left;
+                  height: 0.3rem;
+                  line-height: 0.3rem; }
+    .list-container .cinmaUl .clickBrand {
+      display: none;
+      overflow-y: scroll; }
+      .list-container .cinmaUl .clickBrand .pikeBrand .pikeBrandUl {
+        height: 3.55rem; }
+        .list-container .cinmaUl .clickBrand .pikeBrand .pikeBrandUl .pikeBrandLiNow {
+          color: #f03d37; }
+        .list-container .cinmaUl .clickBrand .pikeBrand .pikeBrandUl .pikeBrandLi {
+          padding-left: 10px;
+          height: 0.44rem;
+          line-height: 0.44rem;
+          text-align: center;
+          display: flex;
+          justify-content: space-around;
+          position: relative; }
+          .list-container .cinmaUl .clickBrand .pikeBrand .pikeBrandUl .pikeBrandLi::after {
+            pointer-events: none;
+            position: absolute;
+            z-index: 999;
+            top: 0;
+            left: 0;
+            content: "\0020";
+            border-color: #777;
+            border-style: solid;
+            border-width: 0 0 1px 0;
+            -webkit-transform-origin: 0 0;
+            transform-origin: 0 0; }
+            @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+              .list-container .cinmaUl .clickBrand .pikeBrand .pikeBrandUl .pikeBrandLi::after {
+                width: 100%;
+                height: 100%; } }
+            @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+              .list-container .cinmaUl .clickBrand .pikeBrand .pikeBrandUl .pikeBrandLi::after {
+                width: 200%;
+                height: 200%;
+                -webkit-transform: scale(0.5);
+                transform: scale(0.5); } }
+            @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+              .list-container .cinmaUl .clickBrand .pikeBrand .pikeBrandUl .pikeBrandLi::after {
+                width: 300%;
+                height: 300%;
+                -webkit-transform: scale(0.33333);
+                transform: scale(0.33333); } }
+          .list-container .cinmaUl .clickBrand .pikeBrand .pikeBrandUl .pikeBrandLi .dui {
+            width: 10px; }
+          .list-container .cinmaUl .clickBrand .pikeBrand .pikeBrandUl .pikeBrandLi .pikeBrandFont {
+            display: block;
+            flex: 1; }
+          .list-container .cinmaUl .clickBrand .pikeBrand .pikeBrandUl .pikeBrandLi .pikeBrandNumber {
+            display: block;
+            flex: 1; }
+    .list-container .cinmaUl .specialContentLiNow {
+      border: 1px solid red !important;
+      color: red !important; }
+    .list-container .cinmaUl .clickspecial {
+      display: none; }
+      .list-container .cinmaUl .clickspecial .clickspecialTitle {
+        height: 20px;
+        margin-left: 10px;
+        margin-top: 5px;
+        margin-bottom: 5px; }
+      .list-container .cinmaUl .clickspecial .specialContent {
+        display: flex; }
+        .list-container .cinmaUl .clickspecial .specialContent .specialContentLi {
+          width: 21.3%;
+          margin-left: 10px;
+          height: 40px;
+          line-height: 40px;
+          text-align: center;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          font-size: 10px; }
+      .list-container .cinmaUl .clickspecial .tingContent1 {
+        display: flex;
+        flex-wrap: wrap;
+        height: 192px;
+        overflow: scroll; }
+        .list-container .cinmaUl .clickspecial .tingContent1 .tingContent {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          width: 21.3%;
+          margin: 5px 0 5px 10px;
+          height: 40px;
+          line-height: 40px;
+          text-align: center;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          font-size: 10px; }
+      .list-container .cinmaUl .clickspecial .clickspecialButton {
+        margin-top: 5px;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: left; }
+        .list-container .cinmaUl .clickspecial .clickspecialButton::after {
+          pointer-events: none;
+          position: absolute;
+          z-index: 999;
+          top: 0;
+          left: 0;
+          content: "\0020";
+          border-color: #999;
+          border-style: solid;
+          border-width: 1px 0 0 0;
+          -webkit-transform-origin: 0 0;
+          transform-origin: 0 0; }
+          @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+            .list-container .cinmaUl .clickspecial .clickspecialButton::after {
+              width: 100%;
+              height: 100%; } }
+          @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+            .list-container .cinmaUl .clickspecial .clickspecialButton::after {
+              width: 200%;
+              height: 200%;
+              -webkit-transform: scale(0.5);
+              transform: scale(0.5); } }
+          @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+            .list-container .cinmaUl .clickspecial .clickspecialButton::after {
+              width: 300%;
+              height: 300%;
+              -webkit-transform: scale(0.33333);
+              transform: scale(0.33333); } }
+        .list-container .cinmaUl .clickspecial .clickspecialButton .clickspecialChong {
+          height: 34px;
+          width: 21.3%;
+          margin: 13px 11px;
+          border: 1px solid #e5e5e5;
+          border-radius: 6px;
+          text-align: center;
+          line-height: 34px;
+          font-size: 14px; }
+        .list-container .cinmaUl .clickspecial .clickspecialButton .clickspecialQue {
+          display: inline-block;
+          height: 34px;
+          width: 21.3%;
+          margin: 13px 11px;
+          border: 1px solid #e5e5e5;
+          border-radius: 6px;
+          text-align: center;
+          line-height: 34px;
+          font-size: 14px;
+          background: #f03d37;
+          border: 1px solid #f03d37;
+          color: #fff; }
+    .list-container .cinmaUl .cinemaDetailTo {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+      padding: 10px 10px;
+      position: relative; }
+      .list-container .cinmaUl .cinemaDetailTo .cinema {
+        display: flex;
+        justify-content: space-between;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 100%; }
+        @media screen and (max-width: 375px) {
+          .list-container .cinmaUl .cinemaDetailTo .cinema {
+            font-size: 18px; } }
+        @media screen and (min-width: 376px) and (max-width: 450px) {
+          .list-container .cinmaUl .cinemaDetailTo .cinema {
+            font-size: 21px; } }
+        @media screen and (min-width: 451px) and (max-width: 699px) {
+          .list-container .cinmaUl .cinemaDetailTo .cinema {
+            font-size: 28px; } }
+        @media screen and (min-width: 700px) and (max-width: 900px) {
+          .list-container .cinmaUl .cinemaDetailTo .cinema {
+            font-size: 34px; } }
+        @media screen and (min-width: 901px) {
+          .list-container .cinmaUl .cinemaDetailTo .cinema {
+            font-size: 39px; } }
+        .list-container .cinmaUl .cinemaDetailTo .cinema .number {
+          color: red;
+          font-size: .16rem; }
+        .list-container .cinmaUl .cinemaDetailTo .cinema .yuanFont {
+          font-size: .1rem;
+          color: red; }
+        .list-container .cinmaUl .cinemaDetailTo .cinema .qiFont {
+          font-size: .1rem;
+          color: #999; }
+      .list-container .cinmaUl .cinemaDetailTo .addr {
+        display: flex;
+        justify-content: space-between; }
+        .list-container .cinmaUl .cinemaDetailTo .addr .position {
+          font-size: 0.14rem;
+          color: #666;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          width: 100%; }
+          @media screen and (max-width: 375px) {
+            .list-container .cinmaUl .cinemaDetailTo .addr .position {
+              font-size: 15px; } }
+          @media screen and (min-width: 376px) and (max-width: 450px) {
+            .list-container .cinmaUl .cinemaDetailTo .addr .position {
+              font-size: 16px; } }
+          @media screen and (min-width: 451px) and (max-width: 699px) {
+            .list-container .cinmaUl .cinemaDetailTo .addr .position {
+              font-size: 20px; } }
+          @media screen and (min-width: 700px) and (max-width: 900px) {
+            .list-container .cinmaUl .cinemaDetailTo .addr .position {
+              font-size: 25px; } }
+          @media screen and (min-width: 901px) {
+            .list-container .cinmaUl .cinemaDetailTo .addr .position {
+              font-size: 29px; } }
+        .list-container .cinmaUl .cinemaDetailTo .addr .distance {
+          padding-left: 5px; }
+      .list-container .cinmaUl .cinemaDetailTo .status {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 100%; }
+        .list-container .cinmaUl .cinemaDetailTo .status .blueBorder {
+          padding: 1px;
+          margin-right: 5px;
+          color: #1394f3;
+          border: 1px solid #A4D5FA;
+          font-size: .1rem; }
+        .list-container .cinmaUl .cinemaDetailTo .status .yellowBorder {
+          padding: 1px;
+          margin-right: 5px;
+          color: #f90;
+          border: 1px solid #f90;
+          font-size: .1rem; }
+      .list-container .cinmaUl .cinemaDetailTo .discount {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 100%;
+        display: flex;
+        font-size: .1rem;
+        padding-top: 5px;
+        color: #999; }
+        .list-container .cinmaUl .cinemaDetailTo .discount .huiFont {
+          background-color: #FF9C1C;
+          color: #fff;
+          width: .15rem;
+          height: .15rem;
+          border-radius: 3px;
+          text-align: center;
+          line-height: .15rem;
+          margin-right: .05rem; }
+      .list-container .cinmaUl .cinemaDetailTo::after {
+        pointer-events: none;
+        position: absolute;
+        z-index: 999;
+        top: 0;
+        left: 0;
+        content: "\0020";
+        border-color: #999;
+        border-style: solid;
+        border-width: 0 0 1px 0;
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0; }
+        @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+          .list-container .cinmaUl .cinemaDetailTo::after {
+            width: 100%;
+            height: 100%; } }
+        @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+          .list-container .cinmaUl .cinemaDetailTo::after {
+            width: 200%;
+            height: 200%;
+            -webkit-transform: scale(0.5);
+            transform: scale(0.5); } }
+        @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+          .list-container .cinmaUl .cinemaDetailTo::after {
+            width: 300%;
+            height: 300%;
+            -webkit-transform: scale(0.33333);
+            transform: scale(0.33333); } }
+
+.head,
+.foot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px; }
+
+.head img,
+.foot img {
+  width: .16rem;
+  height: .16rem;
+  transition: transform 150ms;
+  -webkit-transition: transform 150ms; }
+
+.head img {
+  transform: rotate(180deg); }
+
+.up {
+  transform: rotate(360deg) !important;
+  -webkit-transform: rotate(360deg) !important; }
+
+.down {
+  transform: rotate(180deg); }
+
+.headerIconfont {
+  font-size: .01rem; }
+
+#headerList {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: .12em;
+  height: .41rem;
+  line-height: .41rem; }
+  #headerList .region {
+    display: flex; }
+    #headerList .region .logo {
+      margin-left: 10px; }
+      #headerList .region .logo img {
+        width: .25rem;
+        height: .25rem; }
+    #headerList .region .activeCity {
+      flex: 1.5;
+      margin-left: .5rem;
+      color: #8A869E;
+      display: flex;
+      flex-wrap: nowrap;
+      overflow: hidden; }
+      #headerList .region .activeCity .nowcity {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 100%; }
+  #headerList .allCity {
+    flex: 2.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: .41rem;
+    line-height: .41rem;
+    font-size: .12rem; }
+    #headerList .allCity .allCityFont {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 100%; }
+    #headerList .allCity .sanjiao {
+      width: .04rem;
+      height: .05rem;
+      margin-left: .05rem; }
+  #headerList .comprehensive {
+    flex: 2.5;
+    font-size: .12rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
+  #headerList .characteristic {
+    flex: 2;
+    font-size: .12rem; }
+  #headerList .search {
+    flex: 2;
+    text-align: center;
+    font-size: .18rem; }
+
+#headerList {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: .12em;
+  height: .41rem;
+  line-height: .41rem;
+  position: relative; }
+  #headerList .region {
+    display: flex; }
+    #headerList .region .logo {
+      margin-left: 10px; }
+      #headerList .region .logo img {
+        width: .25rem;
+        height: .25rem; }
+    #headerList .region .activeCity {
+      font-size: .12rem;
+      margin-left: .05rem;
+      color: #8A869E; }
+  #headerList .play {
+    flex: 8;
+    display: flex;
+    justify-content: center; }
+    #headerList .play .willPlaycss {
+      margin: 0 15px;
+      font-size: .16rem;
+      color: #777; }
+    #headerList .play .wellPlaycss {
+      margin: 0 15px;
+      font-size: .16rem;
+      font-weight: 900;
+      color: #ff2e62; }
+  #headerList::after {
+    pointer-events: none;
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    content: "\0020";
+    border-color: #ccc;
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0; }
+    @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+      #headerList::after {
+        width: 100%;
+        height: 100%; } }
+    @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+      #headerList::after {
+        width: 200%;
+        height: 200%;
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5); } }
+    @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+      #headerList::after {
+        width: 300%;
+        height: 300%;
+        -webkit-transform: scale(0.33333);
+        transform: scale(0.33333); } }
+
+.recceivedPs .recceivedPsul {
+  background-color: #fff;
+  position: relative; }
+  .recceivedPs .recceivedPsul .recceivedPsli {
+    padding-top: .1rem;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.1rem;
+    padding-bottom: 0.1rem;
+    overflow: hidden; }
+    .recceivedPs .recceivedPsul .recceivedPsli .receivedLeft {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 100%;
+      display: flex;
+      margin-left: 0.1rem;
+      flex: 1; }
+      .recceivedPs .recceivedPsul .recceivedPsli .receivedLeft .pic {
+        width: 0.64rem;
+        height: 0.84rem; }
+      .recceivedPs .recceivedPsul .recceivedPsli .receivedLeft img {
+        width: 0.64rem;
+        height: 0.84rem; }
+    .recceivedPs .recceivedPsul .recceivedPsli .receivedRight {
+      margin-left: 0.1rem;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around; }
+      .recceivedPs .recceivedPsul .recceivedPsli .receivedRight .show-name {
+        display: flex;
+        align-items: center; }
+        @media screen and (max-width: 375px) {
+          .recceivedPs .recceivedPsul .recceivedPsli .receivedRight .show-name .movieName {
+            font-size: 16px; } }
+        @media screen and (min-width: 376px) and (max-width: 450px) {
+          .recceivedPs .recceivedPsul .recceivedPsli .receivedRight .show-name .movieName {
+            font-size: 17px; } }
+        @media screen and (min-width: 451px) and (max-width: 699px) {
+          .recceivedPs .recceivedPsul .recceivedPsli .receivedRight .show-name .movieName {
+            font-size: 22px; } }
+        @media screen and (min-width: 700px) and (max-width: 900px) {
+          .recceivedPs .recceivedPsul .recceivedPsli .receivedRight .show-name .movieName {
+            font-size: 29px; } }
+        @media screen and (min-width: 901px) {
+          .recceivedPs .recceivedPsul .recceivedPsli .receivedRight .show-name .movieName {
+            font-size: 38px; } }
+        .recceivedPs .recceivedPsul .recceivedPsli .receivedRight .show-name .nd {
+          background-color: #509FC9;
+          position: relative;
+          margin-left: .05rem;
+          font-size: .1rem;
+          color: #fff;
+          text-align: center; }
+          .recceivedPs .recceivedPsul .recceivedPsli .receivedRight .show-name .nd::after {
+            pointer-events: none;
+            position: absolute;
+            z-index: 999;
+            top: 0;
+            left: 0;
+            content: "\0020";
+            border-color: #509FC9;
+            border-style: solid;
+            border-width: 1px;
+            -webkit-transform-origin: 0 0;
+            transform-origin: 0 0; }
+            @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+              .recceivedPs .recceivedPsul .recceivedPsli .receivedRight .show-name .nd::after {
+                width: 100%;
+                height: 100%; } }
+            @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+              .recceivedPs .recceivedPsul .recceivedPsli .receivedRight .show-name .nd::after {
+                width: 200%;
+                height: 200%;
+                -webkit-transform: scale(0.5);
+                transform: scale(0.5); } }
+            @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+              .recceivedPs .recceivedPsul .recceivedPsli .receivedRight .show-name .nd::after {
+                width: 300%;
+                height: 300%;
+                -webkit-transform: scale(0.33333);
+                transform: scale(0.33333); } }
+        .recceivedPs .recceivedPsul .recceivedPsli .receivedRight .show-name .isMax {
+          background-color: #fff;
+          text-align: center;
+          position: relative;
+          font-size: .1rem;
+          color: #509FC9; }
+          .recceivedPs .recceivedPsul .recceivedPsli .receivedRight .show-name .isMax::after {
+            pointer-events: none;
+            position: absolute;
+            z-index: 999;
+            top: 0;
+            left: 0;
+            content: "\0020";
+            border-color: #509FC9;
+            border-style: solid;
+            border-width: 1px;
+            -webkit-transform-origin: 0 0;
+            transform-origin: 0 0; }
+            @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+              .recceivedPs .recceivedPsul .recceivedPsli .receivedRight .show-name .isMax::after {
+                width: 100%;
+                height: 100%; } }
+            @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+              .recceivedPs .recceivedPsul .recceivedPsli .receivedRight .show-name .isMax::after {
+                width: 200%;
+                height: 200%;
+                -webkit-transform: scale(0.5);
+                transform: scale(0.5); } }
+            @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+              .recceivedPs .recceivedPsul .recceivedPsli .receivedRight .show-name .isMax::after {
+                width: 300%;
+                height: 300%;
+                -webkit-transform: scale(0.33333);
+                transform: scale(0.33333); } }
+      .recceivedPs .recceivedPsul .recceivedPsli .receivedRight .brief {
+        color: #666;
+        overflow: hidden;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 100%; }
+        @media screen and (max-width: 375px) {
+          .recceivedPs .recceivedPsul .recceivedPsli .receivedRight .brief {
+            font-size: 14px; } }
+        @media screen and (min-width: 376px) and (max-width: 450px) {
+          .recceivedPs .recceivedPsul .recceivedPsli .receivedRight .brief {
+            font-size: 15px; } }
+        @media screen and (min-width: 451px) and (max-width: 699px) {
+          .recceivedPs .recceivedPsul .recceivedPsli .receivedRight .brief {
+            font-size: 16px; } }
+        @media screen and (min-width: 700px) and (max-width: 900px) {
+          .recceivedPs .recceivedPsul .recceivedPsli .receivedRight .brief {
+            font-size: 23px; } }
+        @media screen and (min-width: 901px) {
+          .recceivedPs .recceivedPsul .recceivedPsli .receivedRight .brief {
+            font-size: 29px; } }
+        .recceivedPs .recceivedPsul .recceivedPsli .receivedRight .brief .pnumber {
+          color: #ff9c1c;
+          margin-left: 10px; }
+      .recceivedPs .recceivedPsul .recceivedPsli .receivedRight .orangeBorder {
+        font-size: 0.1rem;
+        color: #ff9c1c;
+        padding: 2px;
+        position: relative; }
+        .recceivedPs .recceivedPsul .recceivedPsli .receivedRight .orangeBorder::after {
+          pointer-events: none;
+          position: absolute;
+          z-index: 999;
+          top: 0;
+          left: 0;
+          content: "\0020";
+          border-color: #ff9c1c;
+          border-style: solid;
+          border-width: 1px;
+          -webkit-transform-origin: 0 0;
+          transform-origin: 0 0; }
+          @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+            .recceivedPs .recceivedPsul .recceivedPsli .receivedRight .orangeBorder::after {
+              width: 100%;
+              height: 100%; } }
+          @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+            .recceivedPs .recceivedPsul .recceivedPsli .receivedRight .orangeBorder::after {
+              width: 200%;
+              height: 200%;
+              -webkit-transform: scale(0.5);
+              transform: scale(0.5); } }
+          @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+            .recceivedPs .recceivedPsul .recceivedPsli .receivedRight .orangeBorder::after {
+              width: 300%;
+              height: 300%;
+              -webkit-transform: scale(0.33333);
+              transform: scale(0.33333); } }
+      .recceivedPs .recceivedPsul .recceivedPsli .receivedRight .blueBorder {
+        font-size: 0.1rem;
+        color: #1394f3;
+        padding: 2px;
+        position: relative; }
+        .recceivedPs .recceivedPsul .recceivedPsli .receivedRight .blueBorder::after {
+          pointer-events: none;
+          position: absolute;
+          z-index: 999;
+          top: 0;
+          left: 0;
+          content: "\0020";
+          border-color: #1394f3;
+          border-style: solid;
+          border-width: 1px;
+          -webkit-transform-origin: 0 0;
+          transform-origin: 0 0; }
+          @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+            .recceivedPs .recceivedPsul .recceivedPsli .receivedRight .blueBorder::after {
+              width: 100%;
+              height: 100%; } }
+          @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+            .recceivedPs .recceivedPsul .recceivedPsli .receivedRight .blueBorder::after {
+              width: 200%;
+              height: 200%;
+              -webkit-transform: scale(0.5);
+              transform: scale(0.5); } }
+          @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+            .recceivedPs .recceivedPsul .recceivedPsli .receivedRight .blueBorder::after {
+              width: 300%;
+              height: 300%;
+              -webkit-transform: scale(0.33333);
+              transform: scale(0.33333); } }
+  .recceivedPs .recceivedPsul .buyPrice {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: .1rem; }
+    .recceivedPs .recceivedPsul .buyPrice .buy {
+      background-image: linear-gradient(45deg, #ff47a8, #ff2e62);
+      user-select: none;
+      color: #fff;
+      background-color: transparent;
+      box-sizing: border-box;
+      height: .28rem;
+      line-height: .28rem;
+      padding: 0 .13rem;
+      font-size: .12rem;
+      border-radius: 1.2rem;
+      width: .5rem; }
+    .recceivedPs .recceivedPsul .buyPrice .ding {
+      background-image: linear-gradient(45deg, #3C9FE6, #3C9FE6);
+      user-select: none;
+      color: #fff;
+      background-color: transparent;
+      box-sizing: border-box;
+      height: .28rem;
+      line-height: .28rem;
+      padding: 0 .13rem;
+      font-size: .12rem;
+      border-radius: 1.2rem;
+      width: .5rem; }
+  .recceivedPs .recceivedPsul::after {
+    pointer-events: none;
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    content: "\0020";
+    border-color: #ccc;
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0; }
+    @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+      .recceivedPs .recceivedPsul::after {
+        width: 100%;
+        height: 100%; } }
+    @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+      .recceivedPs .recceivedPsul::after {
+        width: 200%;
+        height: 200%;
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5); } }
+    @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+      .recceivedPs .recceivedPsul::after {
+        width: 300%;
+        height: 300%;
+        -webkit-transform: scale(0.33333);
+        transform: scale(0.33333); } }
+
+.head,
+.foot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px; }
+
+.head img,
+.foot img {
+  width: .16rem;
+  height: .16rem;
+  transition: transform 150ms;
+  -webkit-transition: transform 150ms; }
+
+.head img {
+  transform: rotate(180deg); }
+
+.up {
+  transform: rotate(360deg) !important;
+  -webkit-transform: rotate(360deg) !important; }
+
+.down {
+  transform: rotate(180deg); }
+
+#cityList {
+  position: relative;
+  background-color: #f5f5f5; }
+  #cityList .hotCityTitle {
+    display: block;
+    color: #333;
+    font-size: .15rem;
+    background-color: #ebebeb;
+    padding: 10px 15px;
+    line-height: 100%; }
+  #cityList .hotCityList .hotCityListUl {
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    background-color: #f5f5f5;
+    padding-bottom: 15px; }
+    #cityList .hotCityList .hotCityListUl .hotCity {
+      width: 29%;
+      text-align: center;
+      margin-top: 15px;
+      margin-left: 3%;
+      border: 1px solid #ebebeb;
+      padding: 10px 0;
+      background-color: #fff;
+      line-height: 100%; }
+  #cityList .allCityList {
+    background-color: #f5f5f5; }
+    #cityList .allCityList .allCity {
+      width: 100%;
+      text-align: left;
+      margin-top: 15px;
+      margin-left: 3%;
+      border-bottom: 1px solid #ebebeb;
+      padding: 10px 10px;
+      background-color: #f5f5f5;
+      line-height: 100%; }
+  #cityList .AllCity .flexcity {
+    margin-bottom: 100px;
+    position: fixed;
+    top: 20%;
+    right: 0; }
+    #cityList .AllCity .flexcity li a {
+      font-size: 10px; }
+
+#detailHeard {
+  display: flex;
+  background-color: #E54847;
+  color: #fff; }
+  #detailHeard .backspace {
+    flex: 1; }
+  #detailHeard .detailListHeader {
+    flex: 11;
+    text-align: center; }
+
+.movieDetailMain {
+  overflow-y: scroll; }
+  .movieDetailMain .movieDetail {
+    position: relative;
+    width: 100%;
+    height: 200.5px; }
+    .movieDetailMain .movieDetail .zhe {
+      width: 100%;
+      height: 200.5px;
+      background-color: #333;
+      position: absolute; }
+    .movieDetailMain .movieDetail .zhezhao {
+      width: 100%;
+      height: 200.5px;
+      position: absolute;
+      filter: blur(20px);
+      background-size: cover;
+      opacity: .55;
+      z-index: 2; }
+    .movieDetailMain .movieDetail .detailNav {
+      height: 200.5px;
+      display: flex;
+      justify-content: space-around;
+      padding: 20px 15px;
+      overflow: hidden;
+      position: absolute;
+      z-index: 2; }
+      .movieDetailMain .movieDetail .detailNav .detailNavLeft {
+        flex: 3;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 35%;
+        margin-right: 10px; }
+        .movieDetailMain .movieDetail .detailNav .detailNavLeft .detailNavLeftPic {
+          height: 100%;
+          width: 100%; }
+      .movieDetailMain .movieDetail .detailNav .detailNavRight {
+        overflow: hidden;
+        flex: 5;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around; }
+        .movieDetailMain .movieDetail .detailNav .detailNavRight .detailNavRightName {
+          font-size: 20px;
+          color: #fff;
+          font-weight: 900; }
+        .movieDetailMain .movieDetail .detailNav .detailNavRight .detailNavRightEngilshName {
+          font-size: 12px;
+          color: #fff; }
+        .movieDetailMain .movieDetail .detailNav .detailNavRight .score {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          width: 100%; }
+          .movieDetailMain .movieDetail .detailNav .detailNavRight .score .scoreBranch {
+            color: yellow;
+            font-size: 18px; }
+          .movieDetailMain .movieDetail .detailNav .detailNavRight .score .scoreBranchNo {
+            font-size: 14px;
+            color: #fff; }
+        .movieDetailMain .movieDetail .detailNav .detailNavRight .category {
+          display: flex; }
+          .movieDetailMain .movieDetail .detailNav .detailNavRight .category .juqing {
+            font-size: 12px;
+            color: #fff; }
+        .movieDetailMain .movieDetail .detailNav .detailNavRight .detail {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          width: 100%;
+          font-size: 12px;
+          color: #fff; }
+      .movieDetailMain .movieDetail .detailNav .quckary {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: #fff; }
+
+#cinemaDetailHeader {
+  display: flex;
+  background-color: #E54847;
+  color: #fff; }
+  #cinemaDetailHeader .backspace1 {
+    flex: 1; }
+  #cinemaDetailHeader .detailListHeader1 {
+    flex: 11;
+    text-align: center; }
+
+#cinemaDetailMain .cinemaAdd {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: .74rem;
+  padding: 0 10px; }
+  #cinemaDetailMain .cinemaAdd .cinemaNa {
+    font-size: 17px;
+    font-weight: 900; }
+  #cinemaDetailMain .cinemaAdd .cinemaAd {
+    color: #999;
+    font-size: 13px; }
+
+#cinemaDetailMain .lunbo {
+  position: relative;
+  height: 2rem; }
+  #cinemaDetailMain .lunbo .zhe {
+    width: 100%;
+    height: 2.005rem;
+    background-color: #333;
+    position: absolute; }
+  #cinemaDetailMain .lunbo .zhezhao {
+    width: 100%;
+    height: 2.005rem;
+    position: absolute;
+    filter: blur(20px);
+    background-size: cover;
+    opacity: .55;
+    z-index: 2; }
+  #cinemaDetailMain .lunbo .lunboUl {
+    padding: 20px 0px;
+    position: absolute;
+    z-index: 55;
+    overflow: hidden; }
+    #cinemaDetailMain .lunbo .lunboUl .piclunbo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 300ms;
+      transform: scale(0.8); }
+      #cinemaDetailMain .lunbo .lunboUl .piclunbo img {
+        display: block;
+        width: 100%; }
+    #cinemaDetailMain .lunbo .lunboUl .swiper-slide-active, #cinemaDetailMain .lunbo .lunboUl .swiper-slide-duplicate-active {
+      transform: scale(1);
+      border: 3px solid #fff; }
+
+#cinemaDetailMain .cinemaDetailmovieDetail {
+  padding-bottom: 10px;
+  position: relative; }
+  #cinemaDetailMain .cinemaDetailmovieDetail .cinemaDetailmovieName {
+    display: flex;
+    justify-content: center;
+    align-items: baseline; }
+    #cinemaDetailMain .cinemaDetailmovieDetail .cinemaDetailmovieName .name {
+      font-size: 18px;
+      font-weight: 900;
+      margin-right: 3px; }
+    #cinemaDetailMain .cinemaDetailmovieDetail .cinemaDetailmovieName .pinfen {
+      font-size: 14px;
+      color: #ffb400; }
+  #cinemaDetailMain .cinemaDetailmovieDetail #cinemaDetailmoviePage {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #999;
+    text-align: center; }
+  #cinemaDetailMain .cinemaDetailmovieDetail::after {
+    pointer-events: none;
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    content: "\0020";
+    border-color: #000;
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0; }
+    @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+      #cinemaDetailMain .cinemaDetailmovieDetail::after {
+        width: 100%;
+        height: 100%; } }
+    @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+      #cinemaDetailMain .cinemaDetailmovieDetail::after {
+        width: 200%;
+        height: 200%;
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5); } }
+    @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+      #cinemaDetailMain .cinemaDetailmovieDetail::after {
+        width: 300%;
+        height: 300%;
+        -webkit-transform: scale(0.33333);
+        transform: scale(0.33333); } }
+
+#cinemaDetailMain .playList .playListDay .swiper-container1 {
+  width: 33%; }
+  #cinemaDetailMain .playList .playListDay .swiper-container1 .swiper-wrapper {
+    display: flex;
+    justify-content: left; }
+    #cinemaDetailMain .playList .playListDay .swiper-container1 .swiper-wrapper .day {
+      width: 1.2rem;
+      text-align: center;
+      padding: .1rem .13rem; }
+
+#cinemaDetailMain .playList .zhekou {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  background-color: #fff5ea;
+  padding: 10px 0;
+  align-self: baseline; }
+  #cinemaDetailMain .playList .zhekou .zhekouFont {
+    margin-left: 10px;
+    background-color: #ff941a;
+    color: #fff;
+    padding: 1px; }
+  #cinemaDetailMain .playList .zhekou .lijian {
+    flex: 1;
+    text-align: left;
+    color: #fa9600;
+    font-size: 12px;
+    padding-left: 15px; }
+  #cinemaDetailMain .playList .zhekou .kaika {
+    margin-right: 10px;
+    flex: 0 0 auto;
+    color: #999;
+    font-size: 12px; }
+
+#cinemaDetailMain .playList .ListUl {
+  padding: 0 15px; }
+  #cinemaDetailMain .playList .ListUl .ListLi {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 0;
+    position: relative; }
+    #cinemaDetailMain .playList .ListUl .ListLi .ListTime {
+      flex: 1.5; }
+      #cinemaDetailMain .playList .ListUl .ListLi .ListTime .startTime {
+        font-size: 20px;
+        color: #333;
+        white-space: nowrap; }
+      #cinemaDetailMain .playList .ListUl .ListLi .ListTime .endTime {
+        color: #999;
+        font-size: 11px;
+        white-space: nowrap; }
+    #cinemaDetailMain .playList .ListUl .ListLi .Lange {
+      flex: 2; }
+      #cinemaDetailMain .playList .ListUl .ListLi .Lange .LangeDetail {
+        margin-top: 6px;
+        line-height: .18rem;
+        font-size: 13px;
+        color: #333;
+        white-space: normal; }
+      #cinemaDetailMain .playList .ListUl .ListLi .Lange .cinemaNumber {
+        margin-top: 6px;
+        font-size: 11px;
+        color: #999;
+        white-space: normal; }
+    #cinemaDetailMain .playList .ListUl .ListLi .price {
+      flex: 3;
+      font-size: 10px; }
+      #cinemaDetailMain .playList .ListUl .ListLi .price .priceNumber .priceNumberf {
+        font-size: 19px;
+        color: #f03d37;
+        margin-top: 1px; }
+      #cinemaDetailMain .playList .ListUl .ListLi .price .priceNumber .priceFont {
+        font-size: 11px;
+        color: #f03d37;
+        margin-top: 1px; }
+      #cinemaDetailMain .playList .ListUl .ListLi .price .zhekouk {
+        flex: 2;
+        display: inline-block;
+        line-height: 15px;
+        height: .15rem;
+        transform: scale(0.8);
+        transform-origin: left;
+        margin-right: -16px;
+        border: 1px solid #ff9000;
+        border-radius: 2px;
+        font-size: 12px; }
+        #cinemaDetailMain .playList .ListUl .ListLi .price .zhekouk .zhekouka {
+          color: #fff;
+          background-color: #f90;
+          transform: scale(0.8); }
+        #cinemaDetailMain .playList .ListUl .ListLi .price .zhekouk .zhekoujia {
+          background-color: #fff;
+          color: #f90;
+          margin-left: -4px;
+          position: relative;
+          transform: scale(0.8); }
+          #cinemaDetailMain .playList .ListUl .ListLi .price .zhekouk .zhekoujia::after {
+            pointer-events: none;
+            position: absolute;
+            z-index: 999;
+            top: 0;
+            left: 0;
+            content: "\0020";
+            border-color: #f90;
+            border-style: solid;
+            border-width: 1px;
+            -webkit-transform-origin: 0 0;
+            transform-origin: 0 0; }
+            @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+              #cinemaDetailMain .playList .ListUl .ListLi .price .zhekouk .zhekoujia::after {
+                width: 100%;
+                height: 100%; } }
+            @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+              #cinemaDetailMain .playList .ListUl .ListLi .price .zhekouk .zhekoujia::after {
+                width: 200%;
+                height: 200%;
+                -webkit-transform: scale(0.5);
+                transform: scale(0.5); } }
+            @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+              #cinemaDetailMain .playList .ListUl .ListLi .price .zhekouk .zhekoujia::after {
+                width: 300%;
+                height: 300%;
+                -webkit-transform: scale(0.33333);
+                transform: scale(0.33333); } }
+      #cinemaDetailMain .playList .ListUl .ListLi .price .zhekouyouhui {
+        margin-top: 2px;
+        font-size: 11px;
+        color: #999; }
+    #cinemaDetailMain .playList .ListUl .ListLi::after {
+      pointer-events: none;
+      position: absolute;
+      z-index: 999;
+      top: 0;
+      left: 0;
+      content: "\0020";
+      border-color: #777;
+      border-style: solid;
+      border-width: 0 0 1px 0;
+      -webkit-transform-origin: 0 0;
+      transform-origin: 0 0; }
+      @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+        #cinemaDetailMain .playList .ListUl .ListLi::after {
+          width: 100%;
+          height: 100%; } }
+      @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+        #cinemaDetailMain .playList .ListUl .ListLi::after {
+          width: 200%;
+          height: 200%;
+          -webkit-transform: scale(0.5);
+          transform: scale(0.5); } }
+      @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+        #cinemaDetailMain .playList .ListUl .ListLi::after {
+          width: 300%;
+          height: 300%;
+          -webkit-transform: scale(0.33333);
+          transform: scale(0.33333); } }
+  #cinemaDetailMain .playList .ListUl .buyprice {
+    margin-right: 10px;
+    flex: 1;
+    top: 50%;
+    padding: 5px 0;
+    font-size: 12px;
+    background-color: #f03d37;
+    color: #fff;
+    border-radius: 4px;
+    text-align: center; }
+
+#cinemaDetailMain .activeList {
+  color: #f03d37;
+  border-bottom: 2px solid #f03d37; }
+
+#cinemaDetailMain .taocan {
+  padding: 0 15px; }
+  #cinemaDetailMain .taocan .taocanTitle {
+    height: .45rem;
+    line-height: .45rem;
+    line-height: 45px;
+    font-size: 15px;
+    color: #666;
+    position: relative; }
+    #cinemaDetailMain .taocan .taocanTitle::after {
+      pointer-events: none;
+      position: absolute;
+      z-index: 999;
+      top: 0;
+      left: 0;
+      content: "\0020";
+      border-color: #777;
+      border-style: solid;
+      border-width: 0 0 1px 0;
+      -webkit-transform-origin: 0 0;
+      transform-origin: 0 0; }
+      @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+        #cinemaDetailMain .taocan .taocanTitle::after {
+          width: 100%;
+          height: 100%; } }
+      @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+        #cinemaDetailMain .taocan .taocanTitle::after {
+          width: 200%;
+          height: 200%;
+          -webkit-transform: scale(0.5);
+          transform: scale(0.5); } }
+      @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+        #cinemaDetailMain .taocan .taocanTitle::after {
+          width: 300%;
+          height: 300%;
+          -webkit-transform: scale(0.33333);
+          transform: scale(0.33333); } }
+  #cinemaDetailMain .taocan .taocanUl .taocanLi {
+    padding: 15px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    position: relative; }
+    #cinemaDetailMain .taocan .taocanUl .taocanLi .taocanLiLeft {
+      width: 30%;
+      margin-right: 15px; }
+      #cinemaDetailMain .taocan .taocanUl .taocanLi .taocanLiLeft #taocanPicture {
+        display: block;
+        width: 100%; }
+    #cinemaDetailMain .taocan .taocanUl .taocanLi .taocanLiRight {
+      flex: 1;
+      display: flex;
+      flex-direction: column; }
+      #cinemaDetailMain .taocan .taocanUl .taocanLi .taocanLiRight .taocanLiRightTop .taocanNum {
+        display: inline-block;
+        vertical-align: top;
+        margin-top: 1px;
+        margin-right: 7px;
+        padding: 0 4px;
+        font-size: 10px;
+        line-height: 15px;
+        height: .15rem;
+        background: #f90;
+        border-radius: 2px;
+        color: #fff; }
+      #cinemaDetailMain .taocan .taocanUl .taocanLi .taocanLiRight .taocanLiRightCenter {
+        color: #777;
+        font-size: 10px;
+        text-align: right;
+        padding-right: 15px; }
+      #cinemaDetailMain .taocan .taocanUl .taocanLi .taocanLiRight .taocanLiRightBottom {
+        display: flex;
+        justify-content: space-between; }
+        #cinemaDetailMain .taocan .taocanUl .taocanLi .taocanLiRight .taocanLiRightBottom .taocanPrice {
+          font-size: 17px;
+          color: #f03d37; }
+        #cinemaDetailMain .taocan .taocanUl .taocanLi .taocanLiRight .taocanLiRightBottom .taocanButton {
+          display: inline-block;
+          padding: 0 8px;
+          margin-right: 15px;
+          height: .27rem;
+          line-height: 27px;
+          font-size: 12px;
+          border-radius: 3px;
+          color: #fff;
+          background-color: #f03d37; }
+    #cinemaDetailMain .taocan .taocanUl .taocanLi::after {
+      pointer-events: none;
+      position: absolute;
+      z-index: 999;
+      top: 0;
+      left: 0;
+      content: "\0020";
+      border-color: #777;
+      border-style: solid;
+      border-width: 0 0 1px 0;
+      -webkit-transform-origin: 0 0;
+      transform-origin: 0 0; }
+      @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+        #cinemaDetailMain .taocan .taocanUl .taocanLi::after {
+          width: 100%;
+          height: 100%; } }
+      @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+        #cinemaDetailMain .taocan .taocanUl .taocanLi::after {
+          width: 200%;
+          height: 200%;
+          -webkit-transform: scale(0.5);
+          transform: scale(0.5); } }
+      @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+        #cinemaDetailMain .taocan .taocanUl .taocanLi::after {
+          width: 300%;
+          height: 300%;
+          -webkit-transform: scale(0.33333);
+          transform: scale(0.33333); } }
+
+#cinemaDetailMain .huidai {
+  height: 10px;
+  background-color: #f0f0f0; }
+
+#cinemaDetailMain .no-seat {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 230px;
+  background-color: #f0f0f0; }
+  #cinemaDetailMain .no-seat .icon {
+    width: .775rem; }
+    #cinemaDetailMain .no-seat .icon img {
+      width: 100%;
+      display: block; }
+  #cinemaDetailMain .no-seat .text {
+    margin-top: 12px;
+    line-height: 1;
+    font-size: 16px;
+    color: #acacac; }
+  #cinemaDetailMain .no-seat .next-date-button {
+    margin: 20px auto 0;
+    border-radius: 5px;
+    width: 1.70rem;
+    height: .35rem;
+    line-height: 35px;
+    font-size: 14px;
+    color: #f03d37;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+    text-align: center; }
+
+.live {
+  padding: 0px 15px; }
+  .live .liveTitle {
+    margin: 0;
+    font-size: 14px;
+    color: #333;
+    text-align: left;
+    padding: 15px 0px; }
+  .live .axa {
+    width: 100%; }
+    .live .axa .aja .qiuqiu {
+      display: flex;
+      width: 40%;
+      flex-direction: column; }
+      .live .axa .aja .qiuqiu img {
+        display: block;
+        width: .85rem;
+        height: 1.15rem; }
+      .live .axa .aja .qiuqiu .willPlayname {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        margin-top: 3px;
+        width: 100%;
+        margin: 0;
+        font-size: 13px;
+        color: #222;
+        margin-bottom: 3px; }
+      .live .axa .aja .qiuqiu .willPlaytime {
+        margin: 0;
+        font-size: 12px;
+        color: #999; }
+  .live .willPlay .willPlayList {
+    display: flex;
+    align-items: center;
+    padding: 10px 0px; }
+    .live .willPlay .willPlayList .willPlayListLeft img {
+      display: block;
+      width: .64rem;
+      height: .9rem; }
+    .live .willPlay .willPlayList .willPlayListCenter {
+      flex: 1;
+      margin-left: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around; }
+      .live .willPlay .willPlayList .willPlayListCenter .willPlayName {
+        font-size: 17px;
+        color: #333;
+        font-weight: 700;
+        padding-right: 5px;
+        flex-shrink: 1; }
+      .live .willPlay .willPlayList .willPlayListCenter .willPlayWatch {
+        font-size: 13px;
+        margin-left: -2px;
+        display: inline-block;
+        color: #666; }
+        .live .willPlay .willPlayList .willPlayListCenter .willPlayWatch .willPlayNumber {
+          color: #faaf00 !important;
+          font-size: 15px;
+          font-weight: 600; }
+      .live .willPlay .willPlayList .willPlayListCenter .willPlayStart {
+        font-size: 13px;
+        color: #666; }
+      .live .willPlay .willPlayList .willPlayListCenter .playTime {
+        font-size: 13px;
+        color: #666; }
+    .live .willPlay .willPlayList .willPlayListRight {
+      display: flex; }
+      .live .willPlay .willPlayList .willPlayListRight .willPlayButton {
+        background-color: #3c9fe6;
+        padding: 3px;
+        width: 47px;
+        height: 27px;
+        text-align: center;
+        color: #fff;
+        border-radius: 4px;
+        font-size: 12px;
+        cursor: pointer; }
+      .live .willPlay .willPlayList .willPlayListRight .willPlayButton1 {
+        background-color: #faaf00;
+        padding: 3px;
+        width: 47px;
+        height: 27px;
+        text-align: center;
+        color: #fff;
+        border-radius: 4px;
+        font-size: 12px;
+        cursor: pointer; }
+
+.mineHeader {
+  height: 41px; }
+
+.mine-title {
+  background: #FF2E62;
+  width: 100%;
+  height: 1.2rem;
+  text-align: center; }
+  .mine-title .headPortrait {
+    width: 0.72rem;
+    height: 0.72rem;
+    background: cadetblue;
+    border-radius: 50%;
+    margin: 0 auto;
+    background-image: url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAFdAfQDASIAAhEBAxEB/8QAHAAAAQUBAQEAAAAAAAAAAAAAAQACAwQFBgcI/8QAQRAAAQQBAwIEAwYFAQYFBQAAAQACAxEEBRIhMUEGE1FhInGBBxQykaHBFSNCUtGxM2KDkuHwFiVTcvEXY4KEsv/EABsBAQEBAQEBAQEAAAAAAAAAAAABAgMEBQYH/8QAJhEBAQACAgIDAQACAgMAAAAAAAECEQMhEjEEQVETBiIFFDJCcf/aAAwDAQACEQMRAD8AtBiO2lLtR2LDih2JbVMGpbEEW1AtvsptqG1QQliVd1MWobeVU0iLb7obVNSBCCHbyhXZTFvqmlqKj20m0QpdqVKppHSbXspKpLagj2pbaT9vslQRTK9kqT9vslt5UEdI7fROpKkRRzBTT6rktW4aSV1+Zy09gFx2rm77LrxxmuUm5kNKPm1JL/tCUyrK7oI6IpUlRpURuCHROd1QCBwRIQCKmhGeD0QTiO6BV6UOqFcooKWIKcE0J4HCaC7JpCfVoFBGkEUqTSgikj1QJJEJIgFBOIQTSh2SRSr1QBI9EUDaBpTU4pUimpIpUoAEkarol9UASRSRQ+qVJUUaUQkkqSVH0Ht4S2+yn2JBvsvI0g2pbfZTbUC1BFtCBb7KXbwlt5QQltobVNtTS1NiEtSLeFKWptIIqtNIUtJpFBBGRwlSTpWt4JQErHdwgVWhSfba6hWMHHOZktgYLLjSCpSFeyu+ItJyNNYzycuIEmnW2yFzj8zUMRjTJCzJHcx8Ej1pTfa3GxrJEKphajjZ4cInU9n4o3cOaro+SrJlJV1Ti2kWjqgzs7hhHZcXrB/EuzzzweVxOsH8S68bOTmZOXFNHKc/8RKau6HAcIpoKcfVBG5NCkKZ3VDgki0pFKGH2QTk1QDlDsnIIEnNTa4BThSod2TSnJFQRuQTnIKqFco9kqSU2COnVJL6pBEO68pp6ooFAh6JJdkkC6IEooFFNPKBtOpNtRQSrlHogUBSSSQJAIpIEkkkgX5JJcJKD6QLPRN2UVZLOUCwBeVvSvsQLVOWoFqGkG1Dapy1N2qiAtTSFOWppHVBDXKYQpi1NI9lNIhLU2RhDCaVlrNxUk0QbAT3pVdOK1XPdA6hdqxpYmymhxsq7/AzqGcCW2LXcaZ4bhx4m/Dyls+kmNtcwMGTZ0WhoUcuJkT5AB+COt1cCyulfp0bRW1UctseJp80bDT5Hji+y55WuuOHbLzg7KaN3Jcst2kMexzXFtAUAXVXyW9BE99fCSEpoGvtwa8EdTtXKS+3XTybxDg5ejZjMvFc5pb6m/fr6FdPo2qRavp7MiMgPqpGd2uT/EeCJoXgmr6k/uF55gahP4a1sucXOxn8PHqPX6Lthlvpwzx1XqNfmlXwOTYZWTRsljcHMcAQR0IUjm0x3zC0wydR43fJcPq/Bcu51Ifi91w2sdSu3Gxk5t3UoUi4clBd0HqnUgEUDHJikcEwqgtTwLHH5oRsL3Breqtw4rp3bGNJHb3KxlnIsm0EWLJkPqNvA6uPACnfpZF1PGa6891vY+gZJjG9hEQ6v6BQ6hpkONGTFbzX9QoD/K43m76a8XPvw5Y+rePUdFEWtA/FZ9B/lPmmlfbJHktHQdlD3XbG7ZpE+yITa5TgtocEiiAioIyECnEJquwKSRo9kApQUU1HugJRSRq02GI0iRSSUCkKTuyCgYU1PITVGgSRSCu4Akih3QJLulSSgXdJGqS90A4SSSQfTxambeFacxMLF5XRXLU0tU+1N2oIS20wtU5b7JhCCEtTCFMQmlqGkJHKYRSmLUwhESY8e4jjlSZkZEJU2Ey3hW8zG3wEd6VVJ4e09joxKRyV074hGwHsuW8M6pFtdivcGyxOog9x2K6WbJjMVWFyt7dcNeKpO9q4XVsx0/ic4gcfLia0kDoSV1mRO1pPxBeeszvP17UnEG2zlo+ixlVnt1MBphF9E1rnOebfQ6deqqwZLRZJV7HrIksMt3rt6Ke3Rj6pjU1/xBpI+drzXWsL75I4SNeC2/iA/Ze05GE/bYaDfa6XNZmlDe4kNc5x4aRYPskvjWMsdvO/C/iB2ky/wrUDUW4+RMelei9BY9ssBLDdAcj0XDa14XaJyYGl2NO4ih1jk7K54bfqeJkY8EtyY72lpceoHP7j9F3uUs28/jZW7qMZc0kBcLrEZO5eiRfeJnMjdjgH+r09D+y1MbwdpuVHuyYyS+rAPZZx+RjjdVq8NrwJ0L63BpIPekwMcSAAbX0e/wCz/wAPvYAzGLGl1uaD1VDJ+zjQ2vYQHMFbTx7rt/2cU/jk+fwCDynOFdfReu6v9l2MZ/MxcqonDpt5B/8AlcLqHhHUMMgOjLjuLW0Oo9V0x58L9sXjyn05oi+6Ztsq8/F8l22Y7SDW3ujhYkmdlhscTjGD+EDl3src5pnQYmJNLI2GFhMjxZocgf8AfK6PCii06msijlm7vcNwB9vX/T5rc0zw+9kRhLi0u+KV7at5+Z/pH6qzLp+PikBg3urq8dPp/leXLPbrjipYwnnduducfUDgfsE/U8Mfc3kujBq+XBSMDpn7ZHPodif2UGuwvi0xzgHVXYKRa88nhHnPAli6/wB1fsoXxuZyRx6g2E+RkjnkljuUxhc2Smnb6g/uvdhOnGmIhPcGvBc0bXDq31+SYFrSHgIoBFQNI5TaTymFUDskigilyEQLQRUBHXonDomogohFAp6aVQAkUklNBpCaU8hNPRSrDepSAtIKeKPcoqLbxaBHZXXQU3oq/lOc/aAlTaKktp9FsYmlvf8A0lXTozg29qnlDbmaSK08vT3RXxSzXAtNFVTaSRpJB9VFqYWqwWphavM6K5bymFtKw5qYWqCAhRkKdzSo3BUQkc2mEKYhMIQQkJhHClI5THBRFjFftId6LWme18P0WCxxbZtOk1DymEE8KrtyniE5GHqYzMR5a9vWj1CUPj+RrA3I3Bw4Kn1PJiyN11a4LWomguqlf5zL25+Wr07TI8bxSDh36rH0fUHTazllwA8x28E9eVwOI54zAAbs1RXW4rJYdaidGz4gGtc3tRXPLjkmnTDO73XouK7c0P23XWluYs5dFtDdg/3VFo+EZYSyfFcBVh4PJ910eNp8GzyyQ8kdHcGlykem3bPgi8wktJBHVrk3JwGyXKxwDoyN7SOo/wC+62mYcUXDXODh0J/0ScCXctAPt3UsHNZWkRTfzwNrjXmgc2R3+azZNNGHqToy24pjubQ6OPX912P3e3DtxXHomS6cJ3sLxyBwfcGws2UkjMg09jqO07ttOPrxSsxQPZG7i6AHHzpa4gqRoDevF10V3Gw2hpLm88JOPa7ZDIJvw0Qbaf1VnL0xzsR1H4gLH5rZEbQboWnkAhbmEk0lrz7NdLh4sj3NJa1wFrEnyoNSgDXNBI6Er0LXNIbmaRPAwU4ixXqvK24k+mMmGQCC6VrG/queXHZ3Dy/WZm+CoM3IjljNW34itjSfCuLo+L5pawP27i4jhjf8rV0l/mO2PabHUfstx+M3Ka2J4tpNuPY1+ysyuu0uE9xyUeBk6mxz4o3xQ3Yc7gvUMnhkYwJe+QvPOxpsD5rt3FjWAMaLHDBXT5BV5MbExYzNPJte7kndySt41mx5/LFLjNIBDBdUBRP7rm/FDz/DyHOP16rvNVllnLpBEIsccMtp3O/crz/xVHMcUmRhjZ2Mhon6LePeWnLL04McJ5keW7dxISc3bwmr6Emo4B0RQRWg4J6YE8FTQBCYVIUwqBqCcaQ7LQHdHugis6BKIKanBXQckUh8kjyoGlBOQQNIQITj0QI/JRQaLdytPCgMjgAs+IfGLXV+G4WSZQDqPol/Uot0SeWK2xmvWlNg+F5nvDntoWvRcbEjMA4HRWDBExgoALhnyNzD9czi6EIGgub9VYlwYw2topbM2REyBwJCxp9QiA6rh5Wt6kc3rOAxoJAC4bNj2Sldzqucx7TR5XE5zhJIaXp4t6YvtStJJJdUfWhamOapyFGQvK6oXNUZCncFG4IiBwUTmqw4KNwpQQFtBRkKchREcqiIhRkKchREeqFRO4+SwtXyfJY7lbz2/Cub1uMvjf8AJWe2a47J1c+a6nFY2fmmQGynajA6N7iseV7jwSvRdOMa3h6CGbNuaIlo5Dh0WvmEP1ghx2sdHVj26J3hnHj/AIa6VjgHE0Qq2r745xNGakbwvHnlvLT0YzWO3s+hvycTB06Dr/LBLr6j2XWQSCdnxNpwP1XKeFp/4lpGHZLi0A7nfra6kNMDaPIXP09E7gyPc00enqhd9FDNkbOXfhVKXP8ALNBvAXPLObakbEVE9fqrTI9x4o/NcyNXia+9459OfzVqLxZpkL9k+XGx1dDxwtY5QdIyMBtV+ambwKVDC1XCz2B2NkxSj/ccCrwK2h6QQtFqJSIsUVyviLQ4svY/b8LHbzQ9F1ZUErQ5pBCI8ays5+m6s3Hs+Yb3Hpz1J+Q4HzXTYWpNlYwNNNqmg/quX8fGLAyJy1lTZBprx1a2+a/L9Vn6ZqMrIGM3CN3Ao80ueUMb29H81vDm0a469Sq5ZCJPPlAe/s4818lz2HqD2lvmGwedz+Fuw5LJ2XwT7LG7tqhPFJk26GBoP/qyu6LzXxZp+KzJMmoanZH4YomAH/mNleizslyWlolDGdzuJK5bWcPRtLgkkZhCfJDbL9m4j6ngL0cWUlceSbjx/O8p0v8AJjc1nYuNkqkRS0NVy/veU97YyxvYE2Vnr6GPp5gSCSKoICcE0J4QLomlPTXIGJI0lSBqSNWkB6oAj0SSA5U2HBOtN7pwQAoUnHoh6oGJUaRKIQBoLSCtzSc040zHjssRSxSFjuqD1fC8RxjHHPNLOzvE0kUjqPwFcbj5haKDkcibzQebXK8cq+VbGT4nfLwXUPRZ02sueD8X6rDmab6lVyHdyVn+chtfydSc+xZVBzy67URHPqkCtY9KcEkLKS6D67cFG4KZyjK8rshcPVRlTOUTuqMonBRkKVyjKCIhRuClco3IIimFSFMKCF/4VjajFvY5bbhwqOXFcbkSvL9fjEW40uUDTI8D1K7HxWzZaoeCtBn17X4YY2kxscDJRrhei/8Ajtyk7dn4X8KzZGmNbjxO+Ojucu00z7NYS7zM9xLuu0HgLutN02LT8OOFgoNFWU7JyRGCGOFrw5XV3Xsxw60oYGjaXoWKIcWIRtHoosvPZRqiPUFVM/O2AucfzK4vWfEYja5kR3Fx6BefLkt6jtMZG/nam0gkEAD16LmtQ14NsCSu1grkX5WdkzuLnyOs8tFggJZGnTux97Y3yNdyHBptJhfdYubXMz58c5EsjxDyRbjyPVY8A1HU5ZG6Vp8uS2MW4ht0PXhXNdkkf4bxmxgtLYtrgOKIWFpOr5eFhy/dnOicSd5a4jc09j6r2YY444yxwzyuWTa0fV5sbMYH/wAidruHtJFFe0+GPEB1SHyMihksHJ/uHqvm9uTLOJX0bcSWgdvZe0+EGyNixMh9+d5Vu+lLr4zLG1nHK45T8r0wCynhMjO5gd7J6870UT0VPJl2gj2Vp5oLMzATZQjyP7SJmRZ7ZnkbgAI2jqT6rz+PXMtkgbDJGx5Nkl3JPzWz4/ypdV8UyxNftiY/yWuHYD8R/wBVgarDozMyOHTYpBFsHxSv3PJA5JI45PYcLrjxzW8nmyy76a+N4gyIXBma1zWno9jQQV1un6pFJE10EzHt68iv0XnWhznUMabTpfjcLLHdwhhzZWFmOhcHfCa4WOXhkksXj5b6r11mqNdw9zj9eFheIsvMmhEWHjF7D+J/ZoWLh5ssjhvsD0PVbRyYJ8d2OS8Fw4o9V5p/rXa/7R5RqIljzJGvcSL7lUSt7xJgOxM08cdj6rBPC+rx3yxleSzV0HZJFBbQQnNCanNKByBCcgUDKQTih2UAqkuyBRTQXZAdUkR6oEOycE1EIHVwgUgiQgYULTiE0qKRPCIcmE8pXSCZspaVOJ+OVSJSDkNLTng91E4gqIvNpbrQBwTK9E7qgs6ULSSpJB9flRlPcVG4rzuu0ZUblI4qNxREblE5SEqNyCNyid1UjlESga5RlPJTCUDTSrZP+zKsFV8j/ZH5IjzPxcCXkD8l6H9jvhiTCwJNTyGAOmPwBzeQFx+bgu1PWYsZl25w6Nsr3nR8Z2HpUEJ6sYByK7LXJlrHRxY7y2nyp9jaCx5nl1813V3LJNkrJyHEMcSaXg5K9uLmdbmdNOYmg7R14XL5mmRut+8uk67CD+i6efaJy9/BJ62svLiinef55vr0Nj6rnitjnMXCe+W8TN2StP8AsJuAfkV33hzFbmyBmRjSY0xHNUWP+o4/RUNM8LajmPY9/lyQbrDpKc79Rf6r0rSdLbgwAGt3U8L0Yxx0wtV8AYep4bmsk8qYg26rDvn/AJXl2qfZt4i0+ZzIdOdlQk8PhIP6L6DAoI8LtMrOmcsZXg/hv7NdRmy2SZeHJjxA2RIF63pmhfc3ue8gDaGMjb0DR6+5W7QSpbvJbNRMcJLsxo2hG0HdFVnymwDlcrdO2ONyvSy7lVchl0B1PRVzqbQeVDLqDHkC6N8e6z5Ru8WUjxbxd4S1LHfJl/d3lrHlzngWOpXnksTmSyvaGgnoCeQvr5jWSxgOa0hwogiwVkz+CPDOTP58ujYpku7Da5+i7zkmu3ky4u9x87+FtGlxcWTPmFSSnZC09T6n5BdJFpOLk5fDw2V/JJ4XtL/CmilhaMFjLFfASCB7eiq4/hLS8HIM8bJC/wD33bgFjkz8tSelw4tbtcF/4Vx4Mbf5bulkAE2fmsLM8nFsNi+Inq1wJC9knx4HNDXRggdFy2v6XDNCSzHaa6fCOfzXKxu9PKtVwTq+lyPa4CSHkEi7C89kbteW9waXscOM1sksIgY3cKpvAPzXmXiLBkwtSe18ewONjm7Xp+Ln/wCrjyz7Yx4KXuih3Xs7cSTgmpwUDgjwgDaJRDaQKdXsmlFBAo1ykmgEE5BAEQgigcEUAigBCaU9NIUEbkAnFMKNEl3SSQJI/qiUlFBJFJUNSRIBSWdK+unFRkpEphK8zYOKjcUSVG5yIa4qMlOcVE4oGuKjcU89KUTigBKjKcSmE8IEVVyzULlYKqZp/kuRFPwvpIzPErcn7w4GI35cbSSfmegXrl7IqAXFeBWMY2S8myTYhb/qV3Dm7gscl7deKajJytxBLjQWDl5O8FrQ4DuSulyccvBoLFn0mV8lgOq+y8ecr0ysMYsk1vDBXq4qTH06We2tbEW9CNpHC6PG0l7nAv4A7OFrYhw2RNpoAPsEx479paqaNgnExw0np8/3WuDShALfSk8OXojCS0rtMtOFWqmjwkkDSaSFYgkA9Vz2teGo9UgdH99y4WkfhjkoLes9Sq882zopZv26YZXC7lcq7E/hmPj4cTnvbCzbue6ya9VX0zwxmy5UmXPqEwbI/cI/Qdh7LWyJmPzIw4cm7WxFNbQ2uAFjxlr058+Xjo+JghaGg3Q7qy13Cq2d/PI9VYZVccro8guconG+htSO5UD6HdRFeZhd3VKbHbIwteLsd1bkeb4/1TQLHIQcLkaK6HVd7WkRu7rA8b+H4MjS3SuZUrBbXVa9Gz4nWXNH0K4bxfqT8TT3w5eBJJA4UZGdk48dZ7jnnf8AXTwmRux5bd13CYrOYITO50DnFhPG4UVWpfTleUUR1QSCexIE5MCeOiIBTU9MIRTSOUvoiUlA0odU4/NAoAklaSKIRCHRFEFAon5pUioyEwqQpijWgSRSRQpJFIqADqkjXHCSoCScAT2SWGvGvrAuUbnJpemFy84JKjcUi5MJQJzlGXJONphcgDio3FElMJQIlRkokphPKAEqrlAyN2NBLj2AtWTzwOVsaLpDppmzSjgcgWnok20/DGnyYuEz+XHFY+La3l3zJXSgKKNgYwNAqlIFyt3XoxmoO0FDYPQJ/RIiwopnTshyU6qTSooGk3i+qJa4+wQDSOigkbyE7p3UPTkmykZux6qomL/QWgXH0UXm30pRSTEcWrsSSSn14WRqeoNxoHOaNzzyB6pZeeQ7yovieetdAPdZYwpcmUPkcSPQrNy/G8ZN9uflk1STKGZ94eCDwyvhr0pdlpecMjHaXUHV8Q9CoP4fuZtI4AVQ4cuFM2WImujh6hSdOufJMprTpWON9iFYa4DrwsyCW2g2rQm+H1C28624gj3Vd5cFH94PQC/UEpNk3WGkg/2uU2iJ9E9GoDaBxx+qkLQ4/EK90x+NY4J+YQVMgNkH4hfzpZWuYDM/SZ4ZGEWw0fdbX3J3UchVNQY7GxnOAdtA5rstY27ZsfLOrYz8TUJoX7ba4j4VRXW+KdRxsjWp9+NC8hxBLmbXf8za/UFYBhwJT8M0sB7B1SD8xR/RfQxyunkqj3SCuHTnk/yZ8eb2ZIAfyNFROw8mMW7HkH/4krW0RhOHomlpHUEH3CeOiUFNKcgQgYUCnFNQBBO7IJugEcoVSKCbUu6IQRHRQOCJ6JoRVDXJhUh9kwqbahqVI8JH5qbUkh0pKlLDA+eQMjaSSpcpPbeGFyvjjO0VKWHHdK7gLdwvDpdTpjZ9AtdujxxgbWUvPn8iTrF+h+L/AI/z5yZcnTnGafTRwkuoGnkCqCS4/wBcn2J/wuEmtPZi/wB0wvUZdRTS5dH4VIXJhcmF3umlyoJcmkoEptoESmEpOKjJUBJTCeUbQALjTURc0zHdPkDaAa96Xd4eO2KNo2gGuy53w/gPZ/Ne3r0BXUsHHKxlXbCfZ5ApII0h0WHQUQU208IG1aIYnUkAibN2oUn8IcKG0bmqF7VYJCjcL+SjSq+xwFWfE97T8XVXiOE2gOqClFgtadxHz91YbAOtUprCRPHCCINFEKtMwPaQQraryuFmuqqM0NdGTtJquE5krmP4Jo/opALca6EFFsO6uFz7+hKz4hzQ/b/orMbd3BHT16hRxQkdlbYzj5Lcgc1hr191I1gHNUfZFqctBpr0VHOaHQvaW7gR2V1/qDys3LyC1jmimuri+QVYl9PnDxxpMjNbyJcZm9oO57Gg72D1Lete4sLjaXofjyObUNaknw98ObikmSAOIdQ/rjPU+46j3XFnJx84Vl1DP2yWN4cf99o//oc+oK92Funjsm2enNc5v4XOb8jSkyMaXFkDJW1Y3NcDbXj1ae4US6MpXzSzV5kj3103OJpAJg908KIcgfkikVQykCnlNPCKakiUPdA0ikCOU4oIAkEikoojqnWm/JEFAimUnppKVqGj5I1yl2SCzWoIFml2Gh6XsY22/ERZK5jAi83Niaem6yvR9MYGMXk+RldzF+s/xv4uOVy58p66i3j4TWNHCkdjtB6KyzoieQuUxj9Rc6oOgAPCSnfQdykr4x0ldqTaaShfCF+67P5QJKaXIEoEqAkhNJQQJtAHOTCifRNJRCv0V7S4PNyG2apUBVrb0Z0fmAOY4e45CLHXYsYZGAK6KwOCosetorop64XKvRBBtKkBwiooAdSUQfiQKR6KKe031TieFFdBEH1TbOhJQu0CSg08cqbU6ktqW4UhZpXpTHNUZaSpgbu0aHYKCk+2noonSu4paJiaRyFE7HYTwpoZxfI40AURiyynnhabYmgChSdua3g8FPH9FFuBt5cbU8eOwDopHSNq9wASc+hwaV6C2BvZGvRR+ca5b9QmumNWqibdSG781XOTxyoHZXdoB+SCzJLtB4tct4l1dmJjPbJC8tc0gPaL2n3WlmZZdGSAVxuszuySccykxnqwhXemMr08w1PIy8rU/wDzBssbmndi50Zt0Y7cj8bP1H6LL1PS5clzpDA2LNA3PZH/ALPIb/6kfv6heoM07HEPkyRh8RN13afUeijdosEcYbXmY+7c0jgsd6j0P+q64/Jkcrw147BkPhjME0fm4xNmImqPq0/0n3/O03IxNjBNA4yY5NB9UWn+1w7H9D2Xp+qeE8bIa7Iia3d/VQq/euxXPHw3Livc5jA5rhtfG7lrx6H/AL4XefIxrncMo4kJzStzU/D0mKBNA15geeN3Jaf7T7+/cLHdE9jqIIpdZlL6Ys0SX+iQRpaQ0hMIUlJpCBiPRE9UOyBvUIdkSECE6U1JHugikP0RQSUCtA9UkkaCkfRIJKNRe0twbnsv3Xe6fMNreeV5vG90cjXt6g2uswNQa5jXAjpyF4/k43flH6//ABz5eGOGXDl/9drHKCBynukaG3dLn4tQbXBTMrV44oy5zwPquPlt+lzuGM8rdRoZGY0THlJcRk64985MY+H3SXT+PI+Tl/z3w8brb3aigpdiGxbfgkRCaVOWphYgiIKb2UuxDYggKaVM5ibsQREUQtrRMoNkDHE89KWSWcK5ptMmsuA+aVZ7d3A4bRStBZ2I8OjFEH3V9h4XKu8pxCATuqFUVFA89EwuLXKRMey1Ko10RUZeQQKT2ncOFAa6IFprhOKDnkDhtn0VQ1rDuv0Tyy+CUo9xFuFH0TkkLS8tpFFKtp46JwQ4tXSB19U0AeqdwgQVAtoA6oECkdxHUIX7Ipjmgik1sba/CpSLQHomlQuxwCS1QOgce5tXiBSYQCU0jLlglaNzHX7FUZCd3LdrvlS3JBR7FVZNj+tX79U0lZgbuadwsLF1WDEazf5W1w70ukljaOab8waK5TXM1sTXRSG7HHqlmoxWE+Yh5A6IsyHMNgjnqD0KobwXEtPBRMhC46blaLZQ526I7Xf2E9VDK6J1hzdjvSuFnunddJrsl5Hx/E0evUIqeSGB7XMkA8uQU79j9FzWo6HC172mrHC1JprHwur2cqWTO6ZjA6/Mb8JPZw7fVdMc7i55YyuYn0gBx2Aqu7SpAehXUsjHflSFja6Bdp8mxj+UcedMl7AqF+BK3+krs6ZdUE2SGJzfwi1rH5V+0vC4V8D2nkFRlp6LsZtOjkvhZuRo5u2hdsPkY32xeOxz5CYQtGfT5I+yoyMLTRC7zKX0xrSM9UEUqWukBBJLsppSSKQS7opJJJVyppRUsU74fwn6KJJNS+2seS4XeNXv4nKG1aglyJJfxOJUI6pLMwxnqOvJ8rl5JrLIUkPqktOG307sQ2KekNq8baAsTSwqwQmlqCuWIFisbUC1BVLOU3YrJamlqCrsSHwODgpy1NLbQbWlagb2uawD2K6SGQPAIXAjEkncxjLBc4WR6LtcVhx4mMvoAOSsZR1wrRaUSFGxwIuwU+77rDoITiOEwcJwIKJUT2Wi2milKSEwhqml2B6JzeiG1rgi1tdSgffCFWiAkSqyFJUlaPZADQS3IFIUi6CiTaRRtN3cosDcluQJ7pu6lFB8jgOiiMhPdOfIO6he5vW1UNdMOeVTyHb2k39QUZZohdkWFz2sZ7WRkRSOa/sWlNs2lqWpx4bCXuLh3II4XBaxrIy8mmWW10PP6qLUvPmmc58zng9Ss0QlrrJtYtY9tHGn3UtJjWuF2saFld1owPG3qsNyHTRc8KlLvC0HO9lE6upH6KKxcgvpVNx+ZWrmMLmmmgLK2EON/okNLEPPVSPquFCzjuk88eiaQAy3dUJBt6lMY/8AmUDamfGXNRUHnI7txTHR0eUQ2+iqaT+RHK2nNBKxNT0fgujat2GwRfVXmxtfHThdrfHy3Gs5YSx5fNC+JxDhSiXW69poaC9jaXKPbtcQRS+nx5zObeazRiSNJUtsmlLoUvmklUil3R9EkC7hEcIfRFEJBEpJoHhJK0lB9RpIoLxuwdU2k5AoG9k0pyBQMKafknFNKBpCnxMczyge6hq3V6rodJxgxm49UrUm6nxNPZGd+3nurr2cKZraCDx8Nhc7du0mopR5DopNrqLey0WkEWFl5DAeQpsGa2eXZscdOFki+U2yEbFAWh0PrajUHcR7oCRpNd0wuF7Rd2nOjBFqbDwLPVSDhQxE7eVLasSiiKQTbVTRxPKaXIbgham10SRKbv5TXPpNqc59dlE55PATXSAlN80NPNKIW944JsKN0pQllocKpJkUnoSSZVcHqqM+ZtaeqEsu8kWqUjnN/F8Q9PVZuSKuTM6Szvsf6LJyGF92SVpztHJYAW+yz5LI9wsbNMTIwy6yDXus2TFPIPH0XUtiLwdvPsq82GSfwjlWVm4ubjwn3y40rkcGz3V84rmmtpCBxndlmriYIxs5HKgcKKtsgffJTZ4w0c9QptvTNna57TQCx52PDyCFsvkAvlUMmnGwmyxWhjbzu6qGUFz6HAV/Git1noos2FzXWAQFqMWKUbGsf15V7eCyhVrKlLmvFFX8aN8sdkFW+lhj/iNEJoZ2AVh2O4FJjC1wtZVJjxEdQtBkYocUnYrQ5vAVryCapqm2pGZk4jZmlpba4jW9LOPISG8L0+PFI5IWbrWmR5OO74eQF6ODl8a48mG3kZFGkD0V7UcQ42S5tcWqJ/JfUxu5t5aHZBFIdVagd/VK0UuyKSQ6pJd1EFIlK0FqBdUkqSU1VfUtoIoFeF1JAooFAD0TCnEppQNKaUT0TSgcwjcLXT6Y+4QOgXLsaS4fDa6nTCfKAMDm+6mXpvH20x0SAQA5TwPRc3ZUmiNkhRQ/A++nstBwsKtJFRtRE7XA9k+vdRRfE0EqWglUx7ebHUIi9vKcAlamjZrBtHKcSgSmkopF9d1GZq78KTY53yS+7t7i1OzcVH5BB+En6C0w5Lq6O/JXvJaOwUboW9lnVNsuXPdEXuIeGN9rTY9VimoNeDfboVefjj0WNqGkRTu3i2P6BzDRWb5Q6XHZsIcNztpPqnOmY/kUfquUlZqGC8b3+dEOC53UfMd1bwc5kjtj3sIPcO6LM5L6NNwyX0J+SrTTNBAcCD6hMfcYsPLm9j6KF0pvlpr1CXOmhedxtrb+Sic0knbd+ilbXqDfpwVK1oPIIJU9jIkipxdyPUjg/VQugcT8Z69DS23Ruu+CqcuOL3NcR6jsforpGazGo05vXoQicZ7bIv5LSbEzaOaQc3q13A+SukZBBunAhPGNY/CPorroBfPPopGxAdFdbRky4hb8TVnzk3tcF1fk2FRydPZISSKWbjpqVx8+MASeipSQDsV0edgmP8Jseixpm7HctWWlKIESAE8LXkwxPicN5pZdF0gI9V2miaeZ4Bv6UtY+0yebZ+I7Gl+NWMPI/lhrSF1XinQWMjMjAbAXH42O4XS1l0zPbQMZcbJRZAd/HKELZLG7otTHaw1Q5XPbom0/HA6hbLMYECm0o8HHsXS24cegDSkltS3SizBJFlqoaliNbGSAupaw7apZmqxt8h3yXoxwkjllk8a8S4LRIXtFLjninEL0zWcUyl/HHyXAZ+MYZTwvdwZ7mnmznagUkT7oL06YCiUkSggBRSCNqgIooIAeqSNpIPqS+EigkvA7EgUSmWgRTTwjaLWbnUgjouNAK7iaa7JscgjqCOi0MDSQ8B77A/1W5FEyNoa0UFm5OmOG/bHx9GdEQTtd7Fa8UYjaGhoHyUlBKli5WukxkLhFDokCCoopjwHAg8hFzqXI/aD4qb4X8Ovkhc37/kkxY7SeRxy+vRo/UhWTdS2Sbrfx86GWSQRyNcGmrB9OquMl8w8c11K+WtI8Q6hhagzIblzO2Akjdy7vV8r2jwp9pGna2xuK57cfMYKdG8j4v/bz/wBVq4WOeHLL7ehjlNcRazhqUDXhpmD5HdGt5VyPdIAaICw6HhSNZ3KTWUpE0WhSKSSqGFMcLTymlZaiFzbUMkVhWXJh57KaVly4l3Y/NYufoEc4Lo2hjz/U0LqXAE0mGMHhZuEo4wS5uACzIj82NtUW9Vex8/FldsMrdxF7TwVvS4TJAQRY91k5fh2KdweBsIO7c0c2udws9G/0120EW34D3pF8EjRuhffci1VjxM/T91yedF6Ecp7MtpcQ2QMf6HoVn17XR7cl7XFssZ+YTJSS6+od0cP3HQqZxEn4mj5qMGJxLCeD3WtogDC01RpWWRgtodE7Z5bRtduA6WiHAtBNFWIhkgAb0v5Jm2uFbP4eCq8nr0WkSR8iqSlZweFHBIN6vGiOQrO0c3nsBsDgrnsyI8912ubiMlBNLlszHDJCOVzs03jXPRh3m9O69A8Nh/3YfJcYY7yAG+q77w8xrccC+Uw7yXKdBrEbZcZzXNB4XBswWee6mGrXqeZitmjIpc7JovluLm91vklZxYGNpgJFs/RakGiN6hlLXxMHaeQteOFtdFzx47l7W5fjEx9PMfZacUApWnRBJrQF3x49M27VJmbWmlg6gS5pHVdBlGmlc5PuM5HULo51zeXiBwdY591wev6Ztc5wC9VycXeLpYWq6QMiBw2i1njtxy2zljuPGJG7Xkd1H0K3dY01+LO4FhAWI4EHovp43cec1BFKuFoDuigigXKCISQH6JJpSQfUiSSBI9V4HYk0o7gmFwPdAQCTwFs6ZhbyHPaa+apadiuyJhx8I6ldRDG2Nga0VSzllrp0wx2kY0AUE8IDhJc3Uim7hdFEnssbXdbwtExDkZ2TFBGOjpHUoW6ar3CuCq5mokd1wcP2naRkZLmQOycpg/qx8d7wP0Up+0bQg7bI7KY4dd2M4LXjWfPF3DMhrvhrlfOH2ia+/X/F+Y8OP3fGcceBvo1pon6myvUJ/tH0Nsb3w5Epe1pIaYXCz2C8VdCyV75HbtzyXG3d+q3xzvtx5cpZqKuMzc4+tUP+/wDvoq8zpWSudBIY3c05hr/4Wg2Dy46BHB5O5W9OwmZGUwCCSZxdw2Pndf0K7bcHrP2UTT6xpzZ8tjhLjnY9x6SehXqzRwsDwrpo03RYGHHEDi0Ex3dLetea6309mM1BCcmpB3Ki6OQKVoWgaTymkpxKhe+io0Jd7pm5QySUfmoTNQpBOXW6k5qrtffflTt5QScJFvwqGSRkTC9zg1o6kmgua1Xx7oelPdHPnxxvAvm6I+dUVdJbI6fyG7KNLPzNIxslrg6Pk91wuV9sehY9jzjIe2wWCqDvtl0l91I4eg2FLhv6Z/pHWTaRm4TicXIMjOvlu6/mqrpnMLTkRvgeeN1fCfmVzg+1/SLG6Rzr6jYeFO/7VvD77Blcf+E6lzvDfpf6RvOmnZQYXSNPQdU6PKLzsli2v7EFcqfH3h2d29uZ5bvTyyFZj8b+H3jbJnwD/wBzSs3jzn0eeP66tszg2iL/AEKDZeTf6rnB408P7eNWgLfQ2a/RH/xt4eFf+a47gelAgj9FZjl+J5T9b4cGzCuFpMBLb6rjJPGvhxzQRqsNj2d/hWIPtA8ORAB+qw/8rv8AC1McvxPKOlniLmn4q+awM7F3E2aRd9ofhYs51aH/AJHf4WXmeN/DUgLmakD/AMJ3+Ez47pZnjPtJBp4Ml9Ta7HR4PLaBS4XD8c+GoiTJnnj0hef2W7j/AGk+EIhzqhFf/Yf/AIWcOLLe9NXkx/XcFliuyryQA9lzX/1S8IgAjU3Ee0D/APCgf9qvhDr9/mPyx3/4Xbwt+mf6Y/rq2QNHZSUAOFxZ+1nwmLrJyT8sZyrv+1vwxfwyZh//AFytTCz6T+mP67WQnsmAuAtcM77XPDXpmn/gf9VBJ9rvh8g7IM4/8ID91fHJn+mP67DOmpp5WPGTJLfXlchmfalpspPl4eX9QAq0H2nafEbOBkn6tTwyZucejeQHM5CpZGKB24XIO+1rAA+HTMm/d7VRm+1WN8tjTH+WB0MgslPCnnGrrvh5mXC5zW0fVeU6tgHEnewiqK7x/wBqcZYWjSevrKuQ1HxA3UZnPlwYgD6PXfjtx6rlnZbuOeDLKfsrsphKzzQ4RM23e0nqhLMJJC5oYwHsF6JyRjtCWKNzaU+/4CC5vPsmOkBbt3D8kvJCbRIhpITi5g/rCb5jB/Ws+cUtpSTTMy+XpK/0h2+oHvpVnz13RnfQPosjKyg2+V5dOy+csDujHktc4DcuXl1INNbld0PMGVqcMRIILhf/AMpqj03S2CLEa6uXcrVZ0tUm00NAHAVqN1rz29vRjNRL15SJSsUgSKRTXGmkkr56+1vWcPXM5kcOZbsV7meUP7gaPC9z1fPjwcCbIlNMjaXFfI/iHJkydaystshb94kc+vS104pu7cua9aT6f4lzdNjdFh5MsR6Hy3UoJtWz5375MmZ5J6l1rHbE2uSQfUJx85nRwcPVd9PPqNQZ+V0Mkh+qX8Sc3o535rI86RvUKQDeLvqommn/ABV9Ebzz2IXsH2NYmflSz58UDPuo+Azynnd6NC8QZil7b4HoCatfXH2f6IzQfBmnYbSC8xCSQ+rnclYzuo6ceO8nSNbQFmypAKSpA2vO9QkoJAeqICBWhaTuiaSgTiqznUTfRSSGgqUsoFqiDMl2qsJw7vynZBEjSPyXI6h4kx9Kkcyd9FrqPsVO7WLZPbsWTBtuJpU9V8S4GkYhnnyWMHB59+i8o1L7TXuE0OO3aeSx3yXnWp+IJ8/aHzPDmXsJNij1Hy9ui648d+3K8v49H8UfarPkxS42KPIIJDZOrXjuD6H2K8vy9S+8OdIGeW15O5jXHaCevHRZskxf7diL6qOzVLtMZHO232tCSP8AtBUnnxgCmi1R6IEqppo/fG0eAbTvv4A6N/JZl8Jdldni0/4h6V9EhqHsKWZdJtqbTxa38RINhL+JWbP14WUEieybXxjV/iR9k06kTXT8lmd7QJQ8Wp/EiOlfVFupHafX2WSLtOukPFpHUHN7pp1JxWd1RtNnjF/+IuCH8ReD1WeeUapNnjF46i8nqmnPk9VSJTeqbXxi8c59dUDmyV1Kpok+6bNLJy31ySkMtx6uIVS0Rwmzxiycp/8Acm/e3lV0ugQ0nOS89005D/VRUeqCbXUTee490DM71UaCmzSQzOPdDzHdymd0ehQ0O93qkXmuE1IoaHcUkAEkV9V5EQ2mz+S5XWt0QLm2R39l1uTZB4K5nVG2Hhw6iuV0xwlS3Tg8vNeHnkq94Xz3jXMdzydgcOB3PYLM1KPyp3N7XwhomT9z1bHmJoMkBJWrj0bfSzSdovsOU8Ejoq2PO2eBksZ3MewFpU0bi08r59eqekwkcBzaD5XhvQH60nbmuCq5W3YQSorjvHE75sB8Bna1rh8TGcn6lfPniYxNzGxR7TsH4mn9F6v9o2oSYsL4cWRoeWkuXiDnFxJJsk2bXfhx+3n5Mt9IunQpbj3RNdUOb9V2cjtw7qWJgLh+yhA5UsbthoDqeUHRaJhffNVxMcctklaw7QO59SvrfGjEWNFG0cNaGhfK3g5zW+IMAUN/ms5IuuV9UxuqMLhyu3B9pbRHKju04FcXc5K0iUFQkHBHsmONNKCGU0CVj5U4aTzSu5c9A0vJ/HvjtujTnExxvnrn0CSW9RjLLTr9W8R4GkwOkypw2hddyvCPF/i1utas+aDc2LoOOqw9V8Q52ry7smVzwLoHssk/EbXfHj08+WVyTGd57k+ijPJtNtGyurOgo+iXPohadaKHKFG+iduKBNqaAoo9Eia4SA4QA2UgEiUhwFFHkJqRNlEUPmqB80uAbSJ5Qq+6Agoco3QS5PZAuiVIAIk2gCRKRslKqQKkEeUOUC7IVZR6pIEh0R5pKigCKNIEIAeqRR2lLaoAkUaSpA1IJ1JIGpdU7j0QQBJFJB9aZHQrnNVYHsPHK3p5G0fiC5/Up42NJLufQL1ccc64HWmAPaT+LkUsdtg2tTWnl+Tv6DsPRZW5XL2n09o8C+I25OnRYUzv5sLOvqOy7XzQ5ltcPiXz74f1OTTc1mQHHYzqP7vZeuYmpxz4jJWutjxbSCvDz4eN3Ho4s9zTpC6RgskOHssPV9XfAwtZGSe5PACY7PeBtZKa9FzGuZ7mlzHO3lwr5Lzzu6jrllqOB8ZZUWR58k0vmTONAArzwxv/ALT+S7bUcVsuU557lVxp0RHQL34ceo8ly3XH0e4KQausfpETwfhVHI0PaC5pIVuNjPkw6CIIb06qabEliee6YIHkfhKzqtOj8FSOPiDEcBzHK13J919WY798LXeoBXyJoeU/SdUgyXMJax4JC+rdFzBmaVj5IFCRgcAuHNK7cPutUHlODuVXMlJvmfGBfVcHpXNwukrVdjx6p5fSIkLhSryytAItFzxstZmZkNa0m+gVKztf1WHTNNyMmVwpjSfmvlnW9Vm1jVJ8qUk73kgegXffaV4v++TO0yB7gI3W9zTwfZeYk8ld+PHU28ueW6bSBBtPtC7C66YN2/NGkSe6CKACP1SvhJAEugStJQCh3SRQRSASpK+EUARpBJAuEkkr9ECSux1QSQKuEqRStAqSQtJAkqCXCVoEeEkrSQJJK0O6A90kLSQJK0EkCpEJWnsjc/oE1sM7pUSVabjcWQneSbXScdZ8op7SUQz2VvygOyGwe6eBtXr2KSsbQkr/ADNvpTKfTSua1F3B5C6fIO1poD8lxniQuMJfdV2HCYZyLcduV1TIEkxa3kN7rPFdkJHEuNptm6W97Ys6WGvO2rNLXw/EObiwiKOSmjp7LFb0UjFdTL2zvToZPFWeWgBwFiiQOqEGc+ezI8uce5KwJD8CfhzvDh81P54z1Dyt9r2YPiJCoGUjhXZyS21nSfiSJUgmNdU18xrnlRA0mPcVr2hkxZIb20VXDWt7cJzjSjctSQ2kfse2qXv/AIA1/Dz/AA3jY8cn8yBgY4O4NhfPDnEMKbg+IdQ0bID8KYxknkWvPz476deLLxu31r5zSeCmtkHmmzyAvPfDHibLy4YxO1rnEC3WunjzJJHOd0XhyxuN1Xqxz3G42SzYT3zBrbWQ3KcxlgLL1HW54o3hjR+ay1ctNybUBsIB+a858d+OYdJgfiY7jJlSNIG0/h+a5bX/ABzqsfmQRFrL/qHVeeZOTLlZDpZnF0juS4916eL49y7rhly/UU53yTSvkkJc5xJJKiqlbFHsgWCl6Lg5bVCkpnMAUZasWaWGg+yCJSrgLKgkh3SB5QK0rSSRSSQSQFJBHsoAlaSSoVpIWigSQ4SSQK7CSSFoD3SS9kkCQR9EECSSQQFIpdkFAku6fHHvNXS3dN0qCSi+yfddMOO5+mMs5jN1iRwSSuprSrQ0qckCqv2XUDEhhdbGgFNk6herH40+3G82/TnHaU+Ju6RFkYbwFp5rybB7cKlENx5V/njj6amVs7Dbx0QLT6K4GBFzRXRa8WfJnPHHRRFaEzW7eioOXLKabxpqSFpLDb//2Q==);
+    background-size: .72rem .72rem; }
+
+.mine-list {
+  display: flex;
+  flex-direction: column;
+  height: 1.1rem; }
+  .mine-list .ticketCoupon {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: row;
+    text-align: center;
+    margin-top: 50px; }
+    .mine-list .ticketCoupon .ticket {
+      color: #666;
+      display: flex;
+      width: 50%;
+      flex-direction: column; }
+    .mine-list .ticketCoupon .dianying {
+      color: #FF4D64; }
+    .mine-list .ticketCoupon .quan {
+      color: #FEA54C; }
+    .mine-list .ticketCoupon .yo-ico {
+      font-size: 30px; }
+    .mine-list .ticketCoupon .coupon {
+      color: #666;
+      display: flex;
+      width: 50%;
+      flex-direction: column; }
+  .mine-list .tppCard,
+  .mine-list .tppHelp {
+    height: 0.6rem;
+    width: 100%;
+    padding: 0 29px 0 14px; }
+    .mine-list .tppCard .listCard,
+    .mine-list .tppHelp .listCard {
+      position: relative; }
+      .mine-list .tppCard .listCard::after,
+      .mine-list .tppHelp .listCard::after {
+        pointer-events: none;
+        position: absolute;
+        z-index: 999;
+        top: 0;
+        left: 0;
+        content: "\0020";
+        border-color: #999;
+        border-style: solid;
+        border-width: 0 0 1px 0;
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0; }
+        @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+          .mine-list .tppCard .listCard::after,
+          .mine-list .tppHelp .listCard::after {
+            width: 100%;
+            height: 100%; } }
+        @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+          .mine-list .tppCard .listCard::after,
+          .mine-list .tppHelp .listCard::after {
+            width: 200%;
+            height: 200%;
+            -webkit-transform: scale(0.5);
+            transform: scale(0.5); } }
+        @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+          .mine-list .tppCard .listCard::after,
+          .mine-list .tppHelp .listCard::after {
+            width: 300%;
+            height: 300%;
+            -webkit-transform: scale(0.33333);
+            transform: scale(0.33333); } }
+    .mine-list .tppCard span,
+    .mine-list .tppHelp span {
+      height: 100%;
+      font-size: 16px;
+      width: 100%;
+      line-height: .6rem; }
+    .mine-list .tppCard .ticket-icon,
+    .mine-list .tppHelp .ticket-icon {
+      margin-top: 10px; }
+    .mine-list .tppCard .help,
+    .mine-list .tppHelp .help {
+      width: 0.8rem;
+      display: inline-block; }
+    .mine-list .tppCard .consult,
+    .mine-list .tppHelp .consult {
+      display: inline-block;
+      font-size: 12px;
+      color: #bcbcbc;
+      width: 2.2rem;
+      text-align: right; }
+    .mine-list .tppCard .icon-arrow,
+    .mine-list .tppHelp .icon-arrow {
+      display: inline-block;
+      width: 0.12rem;
+      width: 67%;
+      text-align: right; }
+    .mine-list .tppCard .icon,
+    .mine-list .tppHelp .icon {
+      display: inline-block;
+      width: 0.12rem; }
+
+.mineHeader {
+  height: 0.49rem;
+  width: 100%;
+  background-color: #FF2E62; }
+
+.cinema-search {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: .07rem .15rem;
+  background: #fff;
+  color: #000; }
+  .cinema-search .cinema-search-control {
+    background: #f5f5f5;
+    width: 3rem;
+    height: 0.32rem;
+    line-height: .32rem;
+    border-radius: 5px; }
+    .cinema-search .cinema-search-control input {
+      width: 2.4rem;
+      height: 100%;
+      border: 0;
+      background: transparent;
+      font-size: 13px;
+      font-weight: 550; }
+    .cinema-search .cinema-search-control .icon-search {
+      font-size: 16px; }
+  .cinema-search .quxiao-search {
+    width: 0.45rem;
+    height: 0.32rem;
+    line-height: .32rem;
+    margin-left: .15rem;
+    font-size: .15rem;
+    line-height: .32rem;
+    color: #1394f3;
+    font-weight: 600; }
+
+.cinemaSerachMod {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  overflow: scroll; }
+  .cinemaSerachMod .searchResult {
+    width: 100%;
+    background: #fff;
+    padding: 0 0 0 .15rem; }
+    .cinemaSerachMod .searchResult .C-list {
+      display: flex;
+      flex-direction: row;
+      width: 3.6rem;
+      height: 1.1rem;
+      padding: .15rem .15rem .15rem 0;
+      position: relative; }
+      .cinemaSerachMod .searchResult .C-list::after {
+        pointer-events: none;
+        position: absolute;
+        z-index: 999;
+        top: 0;
+        left: 0;
+        content: "\0020";
+        border-color: #999;
+        border-style: solid;
+        border-width: 0 0 1px 0;
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0; }
+        @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+          .cinemaSerachMod .searchResult .C-list::after {
+            width: 100%;
+            height: 100%; } }
+        @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+          .cinemaSerachMod .searchResult .C-list::after {
+            width: 200%;
+            height: 200%;
+            -webkit-transform: scale(0.5);
+            transform: scale(0.5); } }
+        @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+          .cinemaSerachMod .searchResult .C-list::after {
+            width: 300%;
+            height: 300%;
+            -webkit-transform: scale(0.33333);
+            transform: scale(0.33333); } }
+      .cinemaSerachMod .searchResult .C-list .info {
+        width: 2.8rem; }
+        .cinemaSerachMod .searchResult .C-list .info .name-one {
+          padding-bottom: .06rem;
+          height: 0.25rem;
+          width: 3.3rem;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap; }
+          .cinemaSerachMod .searchResult .C-list .info .name-one .name {
+            font-size: .16rem;
+            font-weight: 600; }
+          .cinemaSerachMod .searchResult .C-list .info .name-one .sell-Price {
+            margin-left: 0.1rem;
+            font-size: .11rem;
+            color: #999999; }
+            .cinemaSerachMod .searchResult .C-list .info .name-one .sell-Price .price {
+              font-size: .17rem;
+              color: #ef4238; }
+        .cinemaSerachMod .searchResult .C-list .info .address-one {
+          height: 0.19rem;
+          font-size: .13rem;
+          color: #333;
+          font-weight: 520;
+          margin-top: .1rem;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap; }
+        .cinemaSerachMod .searchResult .C-list .info .fear-tags {
+          padding-top: .07rem;
+          height: 0.21rem; }
+          .cinemaSerachMod .searchResult .C-list .info .fear-tags span {
+            position: relative;
+            padding: 0.03rem .03rem;
+            font-size: .1rem; }
+            .cinemaSerachMod .searchResult .C-list .info .fear-tags span::after {
+              pointer-events: none;
+              position: absolute;
+              z-index: 999;
+              top: 0;
+              left: 0;
+              content: "\0020";
+              border-color: #589daf;
+              border-style: solid;
+              border-width: 1px;
+              -webkit-transform-origin: 0 0;
+              transform-origin: 0 0; }
+              @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+                .cinemaSerachMod .searchResult .C-list .info .fear-tags span::after {
+                  width: 100%;
+                  height: 100%; } }
+              @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+                .cinemaSerachMod .searchResult .C-list .info .fear-tags span::after {
+                  width: 200%;
+                  height: 200%;
+                  -webkit-transform: scale(0.5);
+                  transform: scale(0.5); } }
+              @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+                .cinemaSerachMod .searchResult .C-list .info .fear-tags span::after {
+                  width: 300%;
+                  height: 300%;
+                  -webkit-transform: scale(0.33333);
+                  transform: scale(0.33333); } }
+      .cinemaSerachMod .searchResult .C-list .distance {
+        display: flex;
+        text-align: center;
+        align-items: center;
+        font-weight: 600;
+        color: #333; }
+
+.movie-page-info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: .21rem .16rem;
+  color: #fff; }
+  .movie-page-info .movie-info-top {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 1.38rem; }
+    .movie-page-info .movie-info-top .movie-cover {
+      width: 1rem;
+      height: 1.38rem; }
+      .movie-page-info .movie-info-top .movie-cover img {
+        width: 1rem;
+        height: 1.38rem; }
+    .movie-page-info .movie-info-top .movie-desc {
+      height: 100%;
+      margin-left: .10rem; }
+      .movie-page-info .movie-info-top .movie-desc .movie-cn-nm {
+        font-size: .20rem;
+        color: #fff;
+        font-weight: 700;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; }
+      .movie-page-info .movie-info-top .movie-desc .movie-en-nm {
+        font-size: .12rem;
+        opacity: 0.6;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; }
+      .movie-page-info .movie-info-top .movie-desc .movie-type {
+        font-size: .12rem;
+        opacity: 0.6;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; }
+        .movie-page-info .movie-info-top .movie-desc .movie-type .imax {
+          background: #999;
+          opacity: .6; }
+      .movie-page-info .movie-info-top .movie-desc .actors1 {
+        font-size: .12rem;
+        opacity: 0.6;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; }
+      .movie-page-info .movie-info-top .movie-desc .movie-show-time {
+        font-size: .12rem;
+        opacity: 0.6;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; }
+      .movie-page-info .movie-info-top .movie-desc .btns {
+        display: flex;
+        flex-direction: row; }
+        .movie-page-info .movie-info-top .movie-desc .btns div {
+          width: 1.1rem;
+          height: 0.3rem;
+          border-radius: .08rem;
+          font-size: .14rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #fff;
+          background: rgba(255, 255, 255, 0.35);
+          box-shadow: 0 0.02rem 0.08rem 0 rgba(0, 0, 0, 0.1); }
+        .movie-page-info .movie-info-top .movie-desc .btns .want-to-watch {
+          margin-right: .05rem; }
+  .movie-page-info .real-time-word-of-mouth {
+    width: 100%;
+    height: 1.455rem;
+    margin-top: .15rem;
+    padding: .1rem .12rem;
+    border-radius: .1rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 0.06rem 0 rgba(255, 255, 255, 0.03); }
+    .movie-page-info .real-time-word-of-mouth .top {
+      width: 100%;
+      height: 0.17rem;
+      font-size: .12rem;
+      color: #fff;
+      vertical-align: top; }
+      .movie-page-info .real-time-word-of-mouth .top img {
+        width: 0.14rem;
+        height: 0.14rem;
+        vertical-align: top; }
+    .movie-page-info .real-time-word-of-mouth .middle {
+      width: 100%;
+      height: .8rem;
+      font-size: .44rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: .26rem;
+      color: #fff; }
+      .movie-page-info .real-time-word-of-mouth .middle .wangtoWatch {
+        color: #ffbb29; }
+    .movie-page-info .real-time-word-of-mouth .bottom {
+      width: 100%;
+      height: 0.28rem;
+      padding-top: 0.1rem;
+      font-size: .12rem;
+      color: #fff; }
+  .movie-page-info .real-time-word-of-mouth1 {
+    width: 100%;
+    height: 1.75rem;
+    margin-top: .15rem;
+    padding: .1rem .12rem;
+    border-radius: .1rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 0.06rem 0 rgba(255, 255, 255, 0.03); }
+    .movie-page-info .real-time-word-of-mouth1 .top {
+      width: 100%;
+      height: 0.17rem;
+      font-size: .12rem;
+      color: #fff;
+      vertical-align: top;
+      display: flex;
+      justify-content: space-between; }
+      .movie-page-info .real-time-word-of-mouth1 .top img {
+        width: 0.14rem;
+        height: 0.14rem;
+        vertical-align: top;
+        margin-right: .05rem; }
+      .movie-page-info .real-time-word-of-mouth1 .top .wantWatch {
+        opacity: .6; }
+    .movie-page-info .real-time-word-of-mouth1 .middle {
+      width: 100%;
+      height: 1.12rem;
+      font-size: .44rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: .26rem;
+      color: #fff; }
+      .movie-page-info .real-time-word-of-mouth1 .middle .left {
+        color: #ffbb29;
+        display: flex;
+        flex-direction: column; }
+        .movie-page-info .real-time-word-of-mouth1 .middle .left .people-grade {
+          font-size: .12rem;
+          opacity: .6;
+          color: #fff; }
+        .movie-page-info .real-time-word-of-mouth1 .middle .left .score {
+          font-size: .34rem;
+          text-align: center; }
+      .movie-page-info .real-time-word-of-mouth1 .middle .right {
+        margin-left: .4rem;
+        width: 1.75rem;
+        height: 0.72rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: .05rem; }
+        .movie-page-info .real-time-word-of-mouth1 .middle .right .star-percent-bar {
+          width: 1.73rem;
+          height: 0.15rem;
+          display: flex;
+          flex-direction: row; }
+          .movie-page-info .real-time-word-of-mouth1 .middle .right .star-percent-bar img {
+            width: 0.05rem;
+            height: 0.05rem;
+            margin-right: .01rem; }
+          .movie-page-info .real-time-word-of-mouth1 .middle .right .star-percent-bar .star {
+            width: 0.30rem;
+            height: 100%;
+            display: flex;
+            justify-content: flex-end;
+            margin-right: .05rem;
+            vertical-align: middle; }
+          .movie-page-info .real-time-word-of-mouth1 .middle .right .star-percent-bar .bar {
+            width: 0.9rem;
+            height: 0.05rem;
+            background-color: rgba(255, 255, 255, 0.05);
+            vertical-align: middle; }
+          .movie-page-info .real-time-word-of-mouth1 .middle .right .star-percent-bar .percent {
+            font-size: .08rem;
+            opacity: .6;
+            line-height: .1rem;
+            margin-left: .05rem;
+            vertical-align: middle; }
+    .movie-page-info .real-time-word-of-mouth1 .bottom {
+      width: 100%;
+      height: 0.28rem;
+      padding-top: 0.1rem;
+      font-size: .12rem;
+      color: #fff; }
+  .movie-page-info .movie-watching-tips {
+    width: 100%;
+    height: 0.51rem;
+    padding: .1rem 0; }
+    .movie-page-info .movie-watching-tips .tip {
+      padding: .05rem 0; }
+  .movie-page-info .brief-introduction {
+    padding: .16rem 0 0; }
+    .movie-page-info .brief-introduction .title {
+      display: flex;
+      justify-content: space-between; }
+    .movie-page-info .brief-introduction .shrink, .movie-page-info .brief-introduction .unfold {
+      font-size: .12rem;
+      opacity: 0.6;
+      display: none; }
+    .movie-page-info .brief-introduction .show {
+      display: inline-block; }
+    .movie-page-info .brief-introduction .content {
+      width: 100%;
+      margin: .07rem 0;
+      overflow: hidden; }
+  .movie-page-info .actors {
+    margin: .18rem 0 .15rem; }
+  .movie-page-info .videos-photos {
+    width: 100%;
+    height: 1.3rem;
+    margin-top: .18rem; }
+    .movie-page-info .videos-photos .title {
+      display: flex;
+      justify-content: space-between; }
+      .movie-page-info .videos-photos .title .allImg {
+        font-size: .12rem;
+        opacity: 0.6; }
+    .movie-page-info .videos-photos .swiper {
+      margin-top: .05rem;
+      width: 100%; }
+      .movie-page-info .videos-photos .swiper .swiper-container2 {
+        width: 100%;
+        height: 100%; }
+      .movie-page-info .videos-photos .swiper .swiper-slide {
+        text-align: center;
+        font-size: 14px;
+        /* background: #fff; */
+        width: 140px !important;
+        height: 93px;
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center; }
+        .movie-page-info .videos-photos .swiper .swiper-slide img {
+          width: 140px !important;
+          height: 93px; }

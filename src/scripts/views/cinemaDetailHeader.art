@@ -1,0 +1,4 @@
+<div id="cinemaDetailHeader">
+        <div class="yo-ico backspace1" data-to="cinemaList">&#xe665;</div>
+        <div class="detailListHeader1">大地影院</div>
+</div>

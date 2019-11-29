@@ -1,0 +1,3 @@
+{{each PickCityList}}
+ <div class="diqu" data-id="{{$value.id}}"><span class="dui"></span><li class="pickTownLi"><span class="pickName">{{$value.name}}</span> <span>{{$value.count}}</span></li></div>
+{{/each}}

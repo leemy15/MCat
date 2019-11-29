@@ -1,0 +1,3 @@
+{{each PickCity}}
+<li class="pickAreaLi" data-id="{{$value.id}}">{{$value.name}}</li>
+{{/each}}

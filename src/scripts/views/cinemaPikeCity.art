@@ -1,0 +1,16 @@
+<div class="pikeCityHeader">
+    <div class="shangqu pikeCityHeaderNow">商区</div>
+    <div class="ditie">地铁</div>
+  </div>
+  <div class="pikeCityBody">
+      <div class="pikeArea">
+        <ul class="pickAreaUl">
+           
+        </ul>
+      </div>
+      <div class="pickTown">
+        <ul class="pickTownUl">
+          
+        </ul>
+      </div>
+  </div>

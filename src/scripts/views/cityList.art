@@ -1,0 +1,36 @@
+<div id="cityList">
+  <a class="hotCityTitle" href="##">热门城市</a>
+  <div class="hotCityList">
+    <ul class="hotCityListUl">
+      {{each hotList}}
+      <li data-to="cinemaList" data-cityId="{{ $value.id }}" class="hotCity qq">
+        {{ $value.nm }}
+      </li>
+      {{/each}}
+    </ul>
+</div>
+<div class="AllCity">
+    
+            <ul class="flexcity">
+                    {{each arrFont}}
+                    {{if $value}}
+                     <li>
+                             <a class="flexcityFont" href="#{{ $value.code }}">{{ $value.code }}</a>
+                    </li>
+                    {{/if}}
+                    {{/each}}
+            </ul>
+    {{each arrFont}}
+    {{if $value}}
+    <a class="hotCityTitle" href="##" id="{{ $value.code }}">{{ $value.code }}</a>
+    <ul class="allCityList">
+      {{each $value.city  val key}}
+      <li data-to="cinemaList" data-cityId="{{ val.id }}" class="allCity qq">
+        {{ val.nm }}
+      </li>
+      {{/each}}
+    </ul>
+    {{/if}}
+    {{/each}}
+  </div>
+</div>

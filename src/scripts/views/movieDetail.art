@@ -1,0 +1,35 @@
+<div class="movieDetailMain">
+{{each movieresult}}
+<div class="movieDetail">
+    <div class="zhe"></div>
+    <div class="zhezhao" style="background-image:url({{$value.img.replace(/w\.h/,"71.100")}} );">
+    </div>
+    <div class="detailNav">
+        <div class="detailNavLeft">
+            <img class="detailNavLeftPic" src="{{$value.img.replace(/w\.h/,"148.208") }}" alt="">
+        </div>
+        <div class="detailNavRight">
+            <div class="detailNavRightName">{{$value.nm}}</div>
+            <div class="detailNavRightEngilshName">{{$value.enm}}</div>
+            <div class="score">
+                <span class="scoreBranch">{{$value.sc}}</span>
+                <span class="scoreBranchNo">({{$value.snum}}人评价)</span>
+            </div>
+            <div class="category"><div class="juqing">{{$value.cat}}</div><span>imax</span></div>
+            <div class="moviePosition detail">{{$value.src}}/{{$value.dur}}分钟</div>
+            <div class="playTime detail">{{$value.rt}} {{$value.pubDesc}}</div>
+        </div>
+        <div class="quckary">
+            <div class="yo-ico quckaryFont" data-to="movieDetailMessage">&#xe60a;</div>
+        </div>
+    
+    </div>
+</div>
+{{/each}}
+
+<ul class="movieTody">
+    <div class="list-container">
+        <div class="cinmaUl"></div>
+    </div>
+</ul>
+</div>

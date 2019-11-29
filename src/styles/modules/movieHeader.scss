@@ -1,0 +1,45 @@
+
+#headerList{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: .12em;
+    height: .41rem;
+    line-height: .41rem;
+    .region{
+      
+        display: flex;
+        .logo{
+            margin-left: 10px;
+           img{
+               width: .25rem;
+               height: .25rem;
+           }
+        }
+        .activeCity{
+            font-size: .12rem;
+            margin-left: .05rem;
+            color: #8A869E;
+        }
+    }
+    .play{
+        flex: 8;
+        display: flex;
+        justify-content: center;
+
+    
+    .willPlaycss{
+        margin: 0 15px;
+        font-size: .16rem;
+        color: #777;
+    }
+    .wellPlaycss{
+        margin: 0 15px;
+        font-size: .16rem;
+        font-weight: 900;
+        color: #ff2e62;
+        
+    }
+    }
+    @include border(0 0 1px 0, #ccc);
+}

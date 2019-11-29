@@ -1,0 +1,70 @@
+
+.headerIconfont{
+    font-size: .01rem;
+}
+
+#headerList{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: .12em;
+    height: .41rem;
+    line-height: .41rem;
+   
+    .region{
+        
+        display: flex;
+        .logo{
+            margin-left: 10px;
+           img{
+               width: .25rem;
+               height: .25rem;
+           }
+        }
+        .activeCity{
+            flex: 1.5;
+            margin-left: .5rem;
+            color: #8A869E;
+            display: flex;
+            flex-wrap: nowrap;
+            overflow: hidden;
+            .nowcity{
+                @include ellipsis(null,1);
+                 width: 100%;
+            }
+        }
+    }
+    .allCity{
+        flex: 2.5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: .41rem;
+        line-height: .41rem;
+        font-size: .12rem;
+       .allCityFont{
+        @include ellipsis(null,1);
+        width: 100%;
+       }
+            
+        .sanjiao{
+            width: .04rem;
+            height: .05rem;
+            margin-left: .05rem;
+        }
+    }
+    .comprehensive{
+        flex: 2.5;
+        font-size: .12rem;
+        @include ellipsis(null,1);
+    }
+    .characteristic{
+        flex: 2;
+        font-size: .12rem;
+    }
+    .search{
+        flex: 2;
+        text-align: center;
+        font-size: .18rem;
+    }
+}

@@ -1,0 +1,7 @@
+<div class="cinema-search">
+    <div class="cinema-search-control">
+        <i class="icon-search yo-ico">&#xe87c;</i>
+        <input type="text" class="input-search" placeholder="影院名称或地址"  >
+    </div>
+    <i class="quxiao-search">取消</i>
+</div>

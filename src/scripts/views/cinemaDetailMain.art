@@ -1,0 +1,81 @@
+<div id="cinemaDetailMain">
+  <div class="cinemaAdd">
+    <div class="cinemaNa"></div>
+    <div class="cinemaAd"></div>
+  </div>
+
+  <div class="lunbo">
+    <div class="zhe"></div>
+    <div class="zhezhao"></div>
+    <div class="lunboUl">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          {{each cinemaDetailresultMovie}}
+          <div
+            data-to="{{ $value.id }}"
+            class="swiper-slide swiper-slide-duplicate piclunbo .swiper-slide-active lunbotu"
+          >
+            <img src="{{$value.img.replace(/w\.h/,"148.208") }}" alt="">
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cinemaDetailmovieDetail">
+    <div class="cinemaDetailmovieName">
+      <div class="name"></div>
+      <span class="pinfen"></span>
+    </div>
+    <div id="cinemaDetailmoviePage"></div>
+  </div>
+
+  
+  <div class="playList">
+</div>
+
+<div class="huidai"></div>
+
+<div class="taocan">
+  <div class="taocanTitle">影院超值套餐</div>
+  <div class="taocanUl">
+      {{each two}}
+      <div class="taocanLi">
+          <div class="taocanLiLeft">
+              <img id="taocanPicture" src="{{$value.imageUrl.replace(/w\.h/,"400.0")}}" alt="">
+           </div>
+          <div class="taocanLiRight">
+              <div class="taocanLiRightTop">
+                    <span class="taocanNum">双人</span>
+                      {{$value.title}}
+              </div>
+              <div class="taocanLiRightCenter">{{$value.curNumberDesc}}</div>
+              <div class="taocanLiRightBottom">
+                       <div class="taocanPrice">￥{{$value.price}}</div>
+                       <div class="taocanButton">去购买</div>
+               </div>
+          </div>
+      </div>
+      {{/each}}
+
+      {{each one}}
+      <div class="taocanLi">
+              <div class="taocanLiLeft">
+                  <img id="taocanPicture" src="{{$value.imageUrl.replace(/w\.h/,"400.0")}}" alt="">
+               </div>
+              <div class="taocanLiRight">
+                  <div class="taocanLiRightTop">
+                        <span class="taocanNum">单人</span>
+                              {{$value.title}}
+                  </div>
+                  <div class="taocanLiRightCenter">{{$value.curNumberDesc}}</div>
+                  <div class="taocanLiRightBottom">
+                           <div class="taocanPrice">￥{{$value.price}}</div>
+                           <div class="taocanButton">去购买</div>
+                   </div>
+              </div>
+          </div>
+       {{/each}}
+      </div>
+    </div>

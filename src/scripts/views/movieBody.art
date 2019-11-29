@@ -1,0 +1,12 @@
+<div class="recceivedPs">
+    <div class="head">
+                <img src="/assets/images/arrow.png"/>
+                <b>下拉刷新...</b>
+              </div>
+    <ul class="recceivedPsul">
+     </ul>
+     <div class="foot">
+            <img src="/assets/images/arrow.png"/>
+            <b>上拉加载更多...</b>
+          </div>
+  </div>

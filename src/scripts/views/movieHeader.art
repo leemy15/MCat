@@ -1,0 +1,7 @@
+<div id="headerList">
+    <div class="region"><span class="logo"><img src="http://gw.alicdn.com/tfs/TB1mKkzl9zqK1RjSZFpXXakSXXa-50-50.svg" alt=""></span> <div class="activeCity" data-to="cityList"><span class="nowcityone"></span>  <span class="yo-ico">&#xe635;</span> </div></div>
+    <div class="play">
+        <div class="wellPlay willPlaycss wellPlaycss"  data-to="movieList/hot">正在热映</div>
+        <div class="willPlay willPlaycss" data-to="movieList/will">即将上映</div>
+    </div>
+</div>

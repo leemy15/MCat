@@ -1,0 +1,350 @@
+.list-container {
+  @include border(1px 0 0 0, #e8e8e8);
+ position: relative;
+ 
+ .cinmaUl{
+   background-color: #fff;
+.clickList{
+  display:none;
+  position: absolute;
+  overflow: scroll;
+  background-color: #fff;
+  z-index: 99999;
+  width: 100%;
+  height: 4rem;
+  .pikeCity{
+    overflow: hidden;
+    .pikeCityHeaderNow{
+      color: #f03d37;
+      border-bottom:1px solid #f03d37 ;
+    }
+    .pikeCityHeader{
+      display: flex;
+      .shangqu,.ditie{
+        width: 50%;
+        text-align: center;
+        height: 0.44rem;
+        line-height: 0.44rem;
+      }
+    }
+    .pikeCityBody{
+      display: flex;
+      text-align: center;
+      .pikeArea{
+        flex: 2;
+        .pickAreaUl{
+          overflow-y:scroll;
+          height:3.55rem;
+ 
+          .pickAreaLi{
+            font-size: 14px;
+            text-align: center;
+            height: 0.44rem;
+            line-height: 0.44rem;
+            color: #777;
+          }
+          .pickAreaLiNow{
+            color: #f03d37;
+            background-color: #f5f5f5;
+          }
+        }
+      }
+      .pickTown{
+        flex: 3;
+        background-color: #f5f5f5;
+        .pickTownUl{
+          height:3.55rem;
+          overflow-y:scroll;
+          .pickTownNow{
+            color: #f03d37;
+          }
+          .diqu{
+            display: flex;
+            
+            .dui{
+                  flex:1;       
+                  text-align: right; 
+                  margin-right:10px ;  
+                  height: 0.3rem;
+                  line-height:  0.3rem;
+              }
+             .pickTownLi{
+                flex:3;
+                text-align: left;
+               height: 0.3rem;
+               line-height:  0.3rem;
+             }
+         }
+        }
+      }
+    }
+  }
+}
+
+
+.clickBrand{
+  display: none;
+  overflow-y:scroll;
+  .pikeBrand{
+    .pikeBrandUl{
+      height: 3.55rem;
+      .pikeBrandLiNow{
+        color: #f03d37;
+      }
+      .pikeBrandLi{
+        padding-left:10px;
+        height: 0.44rem;
+        line-height: 0.44rem;
+        text-align: center;
+        display: flex;
+        justify-content: space-around;
+        @include border(0 0 1px 0, #777);
+        .dui{
+          width: 10px;
+        }
+        .pikeBrandFont{
+          
+          display: block;
+          flex: 1;
+        }
+        .pikeBrandNumber{
+          
+          display: block;
+          flex: 1;
+        }
+
+      }
+    }
+  }
+}
+
+.specialContentLiNow{
+  border: 1px solid red !important;
+  color:red !important;
+}
+.clickspecial{  
+  display: none;
+  .clickspecialTitle{
+    height: 20px;
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  .specialContent{
+    display: flex;
+    
+    .specialContentLi{
+    width: 21.3%;
+    margin-left: 10px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 10px;
+    }
+  }
+  .tingContent1{
+    display: flex;
+    flex-wrap:wrap;
+    height: 192px;
+    overflow: scroll;
+    .tingContent{
+      @include ellipsis(null,1);
+      width: 21.3%;
+      margin: 5px 0 5px 10px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 10px;
+    }
+  }
+  
+  .clickspecialButton{
+    margin-top:5px;
+    @include border(1px 0 0 0, #999);
+    display: flex;
+    justify-content: space-between;
+    align-items:left;
+    .clickspecialChong{
+      height: 34px;
+      width: 21.3%;
+      margin: 13px 11px;
+      border: 1px solid #e5e5e5;
+      border-radius: 6px;
+      text-align: center;
+      line-height: 34px;
+      font-size: 14px;
+    }
+    .clickspecialQue{
+      display: inline-block;
+      height: 34px;
+      width: 21.3%;
+      margin: 13px 11px;
+      border: 1px solid #e5e5e5;
+      border-radius: 6px;
+      text-align: center;
+      line-height: 34px;
+      font-size: 14px;
+      background: #f03d37;
+     border: 1px solid #f03d37;
+      color: #fff;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   .cinemaDetailTo{
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     overflow: hidden;
+     padding:10px 10px;
+     .cinema{
+      @media screen and (max-width: 375px) {
+        font-size: 18px;
+      }
+      @media screen and (min-width: 376px)and(max-width: 450px) {
+        font-size: 21px;
+      }
+      @media screen and (min-width: 451px)and(max-width: 699px) {
+        font-size: 28px;
+      }
+      @media screen and (min-width: 700px) and(max-width: 900px){
+        font-size: 34px;
+      }
+      @media screen and (min-width: 901px){
+        font-size: 39px;
+      }
+       display: flex;
+       justify-content: space-between;
+       @include ellipsis(null,1);
+       width:100%;
+       .number{
+         color: red;
+         font-size: .16rem;
+       }
+       .yuanFont{
+        font-size:.1rem;
+        color: red;
+       }
+       .qiFont{
+         font-size:.1rem;
+         color: #999;
+       }
+     }
+     .addr{
+      display: flex;
+      justify-content: space-between;
+     .position{
+       font-size: 0.14rem;
+       color: #666;
+       @include ellipsis(null,1);
+       width:100%;
+       @media screen and (max-width: 375px) {
+        font-size: 15px;
+      }
+      @media screen and (min-width: 376px)and(max-width: 450px) {
+        font-size: 16px;
+      }
+      @media screen and (min-width: 451px)and(max-width: 699px) {
+        font-size: 20px;
+      }
+      @media screen and (min-width: 700px) and(max-width: 900px){
+        font-size: 25px;
+      }
+      @media screen and (min-width: 901px){
+        font-size: 29px;
+      }
+     }
+     .distance{
+       padding-left:5px ;
+     }
+    }
+     .status{
+      @include ellipsis(null,1);
+      width:100%;
+      .blueBorder{
+        padding: 1px;
+        margin-right: 5px;
+        //border: 1px solid #A4D5FA;
+        color: #1394f3;
+        border:1px solid #A4D5FA;
+        font-size: .1rem;
+      }
+      .yellowBorder{
+        padding: 1px;
+        margin-right: 5px;
+        //border: 1px solid #A4D5FA;
+        color: #f90;
+        border:1px solid #f90;
+        font-size: .1rem;
+      }
+     }
+     .discount{
+      @include ellipsis(null,1);
+       width:100%;
+       display: flex;
+       font-size: .1rem;
+       padding-top: 5px;
+       color: #999;
+       .huiFont{
+        background-color: #FF9C1C;
+        color: #fff;
+        width: .15rem;
+        height: .15rem;
+        border-radius: 3px;
+        text-align: center;
+        line-height: .15rem;
+        margin-right: .05rem;
+       }
+     }
+    
+     @include border(0 0 1px 0, #999);
+   }
+ }
+
+}
+.head,
+  .foot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+  }
+
+  .head img,
+  .foot img {
+    width: .16rem;
+    height: .16rem;
+    transition: transform 150ms;
+    -webkit-transition: transform 150ms;
+  }
+
+  .head img {
+    transform: rotate(180deg);
+  }
+
+  .up {
+    transform: rotate(360deg) !important;
+    -webkit-transform: rotate(360deg) !important;
+  }
+
+  .down {
+    transform: rotate(180deg);
+  }

@@ -1,0 +1,62 @@
+<div class="clickList">
+  <div class="pikeCity">
+    
+  </div>
+</div>
+
+
+<div class="clickBrand">
+  <div class="pikeBrand">
+      <ul class="pikeBrandUl">
+        
+      </ul>
+  </div>
+</div>
+
+
+<div class="clickspecial">
+    
+</div>
+
+
+{{each cinemaList}}
+<li data-id="{{$value.id}}" data-to="cinemaDetail" class="cinemaDetailTo">
+  <div class="cinema">
+    {{ $value.nm }}
+    <div class="prace">
+      <span class="number">{{ $value.sellPrice }}</span
+      ><span class="yuanFont">元</span><span class="qiFont">起</span>
+    </div>
+  </div>
+  <div class="addr">
+  <span class="position">{{ $value.addr }}</span>
+  <span class="distance">{{ $value.distance}}</span>
+  </div>
+  <div class="status">
+    <span class="blueBorder">退</span><span class="blueBorder">改签</span
+    ><span class="yellowBorder">小吃</span
+    ><span
+      style="display:{{ $value.tag.vipTag ? 'inline' : 'none' }}"
+      class="yellowBorder"
+      >{{ $value.tag.vipTag ? $value.tag.vipTag : "" }}</span
+    ><span  style="display:{{ $value.tag.hallTypeVOList[0] ? 'inline' : 'none' }}"
+    class="blueBorder">{{
+      $value.tag.hallTypeVOList[0] ? $value.tag.hallTypeVOList[0].name : ""
+    }}</span
+    ><span  style="display:{{ $value.tag.hallTypeVOList[1] ? 'inline' : 'none' }}"
+    class="blueBorder">{{
+      $value.tag.hallTypeVOList[1] ? $value.tag.hallTypeVOList[1].name : ""
+    }}</span
+    ><span  style="display:{{ $value.tag.hallTypeVOList[2] ? 'inline' : 'none' }}"
+    class="blueBorder">{{
+      $value.tag.hallTypeVOList[2] ? $value.tag.hallTypeVOList[2].name : ""
+    }}</span
+    >
+  </div>
+  <div class="discount" style="display:{{ $value.promotion.cardPromotionTag? ' ' : 'none' }}">
+  
+    <span class="huiFont" style="display:{{ $value.promotion.cardPromotionTag? ' ' : 'none' }}">卡</span>
+    <span class="discountFont">{{ $value.promotion.cardPromotionTag }}</span>
+  </div>
+</li>
+{{/each}}

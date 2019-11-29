@@ -1,0 +1,22 @@
+<div class="clickspecialTitle">特色功能</div>
+    <ul class="specialContent">
+
+
+{{each serviceResult}}
+        <li data-id="{{$value.id}}" class="specialContentLi">{{$value.name}}</li>
+{{/each}}
+    </ul>
+    <div class="clickspecialTitle">特殊厅</div>
+    <ul class="tingContent1">
+      {{each specialResult}}
+      <li class="tingContent" data-id="{{$value.id}}">{{$value.name}}</li>
+      {{/each}}
+    </ul>
+    <div class="clickspecialButton">
+      <div class="clickspecialChong">
+          重置
+      </div>
+      <div class="clickspecialQue">
+        确定
+      </div>
+    </div>

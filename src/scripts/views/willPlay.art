@@ -1,0 +1,45 @@
+<div class="live">
+    
+  <div class="liveTitle">近期最受期待</div>
+    <div class="swiper-container axa">
+      <div class="swiper-wrapper aja">
+          {{each willPlay}}
+        <div class="swiper-slide qiuqiu" data-id="{{$value.id}}">
+          <img
+          src="{{$value.img.replace(/w\.h/,"170.230") }}"
+          />
+          <div class="willPlayname">{{$value.nm}}</div>
+          <div class="willPlaytime">{{$value.comingTitle.match(/\b.+\s/g)[0]}}</div>
+        </div>
+         {{/each}}
+      </div>
+    </div>
+
+    {{each timeArr}}
+    <div class="liveTitle">{{$value[0]}}</div>
+      <ul class="willPlay">
+          {{each $value[1]  vall }}
+      
+        <li class="willPlayList" data-id="{{vall.id}}">
+            <div class="willPlayListLeft">
+              <img src="{{vall.img.replace(/w\.h/,"128.108") }}" alt="">
+            </div>
+            <div class="willPlayListCenter">
+              <div class="willPlayName">{{vall.nm}}</div>
+              <div class="willPlayWatch">
+                <span class="willPlayNumber">{{vall.wish}}</span>
+                人想看
+              </div>
+              <div class="willPlayStart">主演:{{vall.star}}</div>
+              <div class="playTime">{{vall.rt}}上映</div>
+            </div>
+            <div class="willPlayListRight">
+                <span class="willPlayButton" style="display:{{ vall.showst==4? 'block' : 'none' }}">预售</span>
+                <span class="willPlayButton1" style="display:{{ vall.showst==1? 'block' : 'none' }}">想看</span>
+            </div>
+        </li>
+        {{/each}}
+      </ul>
+      {{/each}}
+  </div>
+

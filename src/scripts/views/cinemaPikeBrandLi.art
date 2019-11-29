@@ -1,0 +1,4 @@
+
+{{each PickCity}}
+<li class="pikeBrandLi" data-id="{{$value.id}}"><span class="dui"></span><span class="pikeBrandFont">{{$value.name}}</span><span class="pikeBrandNumber">{{$value.count}}</span></li>
+{{/each}}

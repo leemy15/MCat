@@ -1,0 +1,24 @@
+    <div class="playListDay">
+    <div class="swiper-container1">
+        <div class="swiper-wrapper">
+                {{each dayTime}}
+                <div class="swiper-slide day">{{$value.dateShow}}</div>
+                {{/each}}   
+        </div>
+    </div>
+       
+      </div>
+      {{each vipIfon}}
+      <div class="zhekou"> 
+        <div class="zhekouFont">折扣</div>
+        <div class="lijian">{{$value.title}}</div>
+        <div class="kaika">{{$value.process}}</div>
+      </div> 
+      {{/each}}
+  
+      <div class="ListUl">
+           
+      </div>
+
+        </div>
+     
